@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Animals/Boar.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Animals/Chick.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Animals/Chicken.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Animals/HornedSheep.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Animals/Horse(32x32).png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Animals/MarineAnimals.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Animals/Pig.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Animals/Sheep.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Cyan/CyanBarracks.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Cyan/CyanChapels.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Cyan/CyanDocks.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Cyan/CyanHouses.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Cyan/CyanHuts.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Cyan/CyanKeep.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Cyan/CyanMarket.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Cyan/CyanResources.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Cyan/CyanShip.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Cyan/CyanTaverns.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Cyan/CyanTower.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Cyan/CyanWell.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Cyan/CyanWorkshops.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Enemy/Mausoleum.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Enemy/Orc/AllBuildings-Preview.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Enemy/SpearWall.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Lime/LimeBarracks.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Lime/LimeChapels.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Lime/LimeDocks.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Lime/LimeHouses.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Lime/LimeHuts.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Lime/LimeKeep.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Lime/LimeMarket.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Lime/LimeResources.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Lime/LimeShip.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Lime/LimeTaverns.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Lime/LimeTower.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Lime/LimeWell.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Lime/LimeWorkshops.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Purple/PurpleBarracks.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Purple/PurpleChapels.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Purple/PurpleDocks.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Purple/PurpleHouses.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Purple/PurpleHuts.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Purple/PurpleKeep.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Purple/PurpleMarket.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Purple/PurpleResources.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Purple/PurpleShip.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Purple/PurpleTaverns.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Purple/PurpleTower.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Purple/PurpleWell.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Purple/PurpleWorkshops.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Red/RedBarracks.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Red/RedChapels.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Red/RedDocks.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Red/RedHouses.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Red/RedHuts.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Red/RedKeep.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Red/RedMarket.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Red/RedResources.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Red/RedShip.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Red/RedTaverns.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Red/RedTower.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Red/RedWell.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Red/RedWorkshops.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Wood/Barracks.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Wood/CaveV2.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Wood/Chapels.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Wood/Docks.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Wood/Houses.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Wood/Huts.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Wood/Keep.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Wood/Market.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Wood/Resources.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Wood/Taverns.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Wood/Tower.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Wood/Tower2.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Buildings/Wood/Workshops.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Champions/Arthax.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Champions/Börg.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Champions/Gangblanc.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Champions/Grum.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Champions/Kanji.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Champions/Katan.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Champions/Okomo.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Champions/Zhinja.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Demons/ArmouredRedDemon.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Demons/PurpleDemon.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Demons/RedDemon.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Dragons/BlackDragon.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Dragons/BlueDragon.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Dragons/RedDragon.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Dragons/WhiteDragon.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Dragons/YellowDragon.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Frostborn/Mammoth.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Frostborn/Wendigo.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Frostborn/Yeti.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/GiantAnimals/GiantCrab.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Orcs/ArcherGoblin.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Orcs/ClubGoblin.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Orcs/FarmerGoblin.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Orcs/KamikazeGoblin.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Orcs/Minotaur.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Orcs/Orc.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Orcs/OrcMage.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Orcs/OrcShaman.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Orcs/SpearGoblin.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Pirates/PirateCaptain.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Pirates/PirateGrunt.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Pirates/PirateGunner.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Slimes/KingSlimeBlue.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Slimes/KingSlimeGreen.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Slimes/MegaSlimeBlue.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Slimes/MegaSlimeGreen.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Slimes/Slime.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Slimes/SlimeBlue.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Undead/Necromancer.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Monsters/Undead/Skeleton-Soldier.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/AssasinTemplate.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/AxemanTemplate.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/CyanMelee/AssasinCyan.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/CyanMelee/AxemanCyan.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/CyanMelee/SpearmanCyan.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/CyanMelee/SwordsmanCyan.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/LimeMelee/AssasinLime.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/LimeMelee/AxemanLime.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/LimeMelee/SpearmanLime.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/LimeMelee/SwordsmanLime.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/PurpleMelee/AssasinPurple.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/PurpleMelee/AxemanPurple.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/PurpleMelee/SpearmanPurple.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/PurpleMelee/SwordsmanPurple.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/RedMelee/AssasinRed.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/RedMelee/AxemanRed.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/RedMelee/SpearmanRed.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/RedMelee/SwordsmanRed.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/SpearmanTemplate.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Melee/SwordsmanTemplate.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Mounted/CyanKnight.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Mounted/LimeKnight.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Mounted/PurpleKnight.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Mounted/RedKnight.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/Ballista.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/BowmanTemplate.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/CyanRanged/BowmanCyan.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/CyanRanged/MageCyan.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/CyanRanged/MusketeerCyan.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/LimeRanged/BowmanLime.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/LimeRanged/MageLime.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/LimeRanged/MusketeerLime.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/MageTemplate.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/PurpleRanged/BowmanPurple.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/PurpleRanged/MagePurple.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/PurpleRanged/MusketeerPurple.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/RedRanged/BowmanRed.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/RedRanged/MageRed.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Soldiers/Ranged/RedRanged/MusketeerRed.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Workers/CyanWorker/FarmerCyan.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Workers/FarmerTemplate.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Workers/LimeWorker/FarmerLime.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Workers/PurpleWorker/FarmerPurple.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Characters/Workers/RedWorker/FarmerRed.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Fonts/File.spritefont</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Ground/Cliff-Water.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Ground/Cliff.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Ground/DeadGrass.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Ground/Grass.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Ground/Shore.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Ground/TexturedGrass.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Ground/Winter.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Miscellaneous/Boat.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Miscellaneous/Bridge.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Miscellaneous/Chests.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Miscellaneous/PirateShip.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Miscellaneous/Portal.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Miscellaneous/QuestBoard.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Miscellaneous/Signs.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Miscellaneous/StreetSigns.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Miscellaneous/Tombstones.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Miscellaneous/TransportShip.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Miscellaneous/WarShip.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Miscellaneous/Well.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Nature/Cactus.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Nature/CoconutTrees.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Nature/DeadTrees.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Nature/PineTrees.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Nature/Rocks.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Nature/Trees.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Nature/Tumbleweed.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Nature/Wheatfield.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Nature/WinterDeadTrees.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Nature/WinterTrees.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Objects/ArrowLong.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Objects/ArrowShort.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Objects/Axe.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Objects/BallistaBolt.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Objects/Bullet.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Objects/FireballProjectile.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Objects/ShortBig.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Objects/Spear.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/Objects/SwordShort.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/User Interface/BoxSelector.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/User Interface/Highlighted-Boxes.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/User Interface/Icons-Essentials.png</File>
+    <File>C:/Users/adel/OneDrive/سطح المكتب/AdilGame/Content/User Interface/UiIcons.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
