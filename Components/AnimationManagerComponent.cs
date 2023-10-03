@@ -4,14 +4,14 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-public class AnimationComponent : Component
+public class AnimationManagerComponent : Component
 {
     private Dictionary<string, Animation> animations = new Dictionary<string, Animation>();
     private Animation currentAnimation;
     
     public bool IsPlaying { get; private set; }
     
-    public AnimationComponent() => IsPlaying = true;
+    public AnimationManagerComponent() => IsPlaying = true;
     
     public void AddAnimation(string name, Animation animation)
     {
@@ -38,10 +38,12 @@ public class AnimationComponent : Component
     {
         if (IsPlaying)
             currentAnimation?.Update(gameTime);
+
+        base.Update(gameTime);    
     }
     
     public override void Draw(SpriteBatch spriteBatch)
     {
-        currentAnimation?.Draw(spriteBatch, Entity.Transform.Position, Entity.Transform.Scale.X);
+        currentAnimation?.Draw(spriteBatch, Gameobject.Transform.Position, Gameobject.Transform.Scale.X);
     }
 }

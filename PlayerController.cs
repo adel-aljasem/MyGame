@@ -2,14 +2,14 @@ using Microsoft.Xna.Framework;
 
 public class PlayerController : GameObject 
 {
-        public float Speed { get; set; }
-    private AnimationComponent AnimationComponent { get; set; }
+    public float Speed { get; set; }
+    private AnimationManagerComponent animationManagerComponent { get; set; }
     public EntityState State { get; private set; }
 
     public PlayerController(float speed)
     {
         Speed = speed;
-        AnimationComponent = new AnimationComponent();
+        animationManagerComponent = new AnimationManagerComponent();
         State = EntityState.Idle;
     }
 
@@ -25,7 +25,7 @@ public class PlayerController : GameObject
             EntityState.Attack => "Attack",
             _ => "Idle",
         };
-        AnimationComponent.PlayAnimation(animation); // Play the correct animation.
+        animationManagerComponent.PlayAnimation(animation); // Play the correct animation.
     }
 
     public void HandleInput(GameTime gameTime)
