@@ -1,3 +1,4 @@
+﻿using AdilGame.content;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -9,9 +10,10 @@ public class Game1 : Game
 {
     GraphicsDeviceManager graphics;
     SpriteBatch spriteBatch;
-    Texture2D PlayerTextureAnimation;
     ScreenManager screenManager;
-   
+    public static Game1 Instance ;
+    public GameObject Player { get; set; } = new GameObject();
+    PlayerController playerController1;
 
     public Game1()
     {
@@ -19,8 +21,7 @@ public class Game1 : Game
         Content.RootDirectory = "Content";
         screenManager = new ScreenManager(graphics, 1280,720);
         Window.AllowUserResizing = true;
-
-
+        Instance = this;
     }
 
     protected override void Initialize()
@@ -31,7 +32,8 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         spriteBatch = new SpriteBatch(GraphicsDevice);
-        
+        playerController1 = Player.AddComponent<PlayerController>();
+        screenManager.LoadContent(Content);
 
     }
 
@@ -42,6 +44,8 @@ public class Game1 : Game
             Exit();
       
         base.Update(gameTime);
+        playerController1.Update(gameTime);
+        
     }
 
     protected override void Draw(GameTime gameTime)
@@ -55,7 +59,7 @@ public class Game1 : Game
 
 
         screenManager.Draw(gameTime, spriteBatch);
-
+        playerController1.Draw(spriteBatch, gameTime);
         spriteBatch.End();
 
         base.Draw(gameTime);

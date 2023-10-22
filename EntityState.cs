@@ -1,7 +1,10 @@
 public enum EntityState
 {
     Idle,
-    Walk,
+    Walkdown,
+    WalkUp,
+    WalkRight,
+    WalkLeft,
     Jump,
     Fall,
     Attack,
