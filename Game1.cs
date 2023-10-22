@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -31,8 +31,6 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         spriteBatch = new SpriteBatch(GraphicsDevice);
-        screenManager.LoadContent(Content);
-        PlayerTextureAnimation = Content.Load<Texture2D>("Content/Characters/Champions/Arthax");
         
 
     }
