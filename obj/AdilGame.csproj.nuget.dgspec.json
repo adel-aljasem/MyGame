@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adel\\OneDrive\\سطح المكتب\\AdilGame\\AdilGame.csproj": {}
+    "C:\\Users\\zoomb\\source\\repos\\adel-aljasem\\MyGame\\AdilGame.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adel\\OneDrive\\سطح المكتب\\AdilGame\\AdilGame.csproj": {
+    "C:\\Users\\zoomb\\source\\repos\\adel-aljasem\\MyGame\\AdilGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adel\\OneDrive\\سطح المكتب\\AdilGame\\AdilGame.csproj",
+        "projectUniqueName": "C:\\Users\\zoomb\\source\\repos\\adel-aljasem\\MyGame\\AdilGame.csproj",
         "projectName": "AdilGame",
-        "projectPath": "C:\\Users\\adel\\OneDrive\\سطح المكتب\\AdilGame\\AdilGame.csproj",
-        "packagesPath": "C:\\Users\\adel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adel\\OneDrive\\سطح المكتب\\AdilGame\\obj\\",
+        "projectPath": "C:\\Users\\zoomb\\source\\repos\\adel-aljasem\\MyGame\\AdilGame.csproj",
+        "packagesPath": "C:\\Users\\zoomb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zoomb\\source\\repos\\adel-aljasem\\MyGame\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\adel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\zoomb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +45,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "MonoGame.Content.Builder.Task": {
               "target": "Package",
               "version": "[3.8.1.303, )"
@@ -45,6 +56,14 @@
             "MonoGame.Framework.DesktopGL": {
               "target": "Package",
               "version": "[3.8.1.303, )"
+            },
+            "Myra": {
+              "target": "Package",
+              "version": "[1.5.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -58,30 +77,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.22, 6.0.22]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.22, 6.0.22]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.22, 6.0.22]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.22, 6.0.22]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

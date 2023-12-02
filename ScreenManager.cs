@@ -1,10 +1,14 @@
 using System;
+using AdilGame;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Extended.Screens;
 
 public class ScreenManager
 {
+    SpriteBatch spriteBatch1;
+
     GraphicsDeviceManager graphics;
     int baseWidth;
     int baseHeight;
@@ -13,6 +17,8 @@ public class ScreenManager
     int frameCounter = 0;
     TimeSpan elapsedTime = TimeSpan.Zero;
     SpriteFont font;
+    public float ScaleX => (float)graphics.GraphicsDevice.Viewport.Width / baseWidth;
+    public float ScaleY => (float)graphics.GraphicsDevice.Viewport.Height / baseHeight;
 
     public ScreenManager(GraphicsDeviceManager graphics, int baseWidth, int baseHeight)
     {
@@ -20,26 +26,27 @@ public class ScreenManager
         this.baseWidth = baseWidth;
         this.baseHeight = baseHeight;
         SetWindowSize(baseWidth,baseHeight);
+
     }
 
-    private void SetWindowSize(int width, int height)
+    public void SetWindowSize(int width, int height)
     {
         graphics.PreferredBackBufferWidth = width;
         graphics.PreferredBackBufferHeight = height;
         graphics.ApplyChanges();
     }
 
-    public Matrix GetScaleMatrix()
+    public Matrix GetScaleMatrix(float multiplayX , float multiplayY)
     {
         float scaleX = (float)graphics.GraphicsDevice.Viewport.Width / baseWidth;
         float scaleY = (float)graphics.GraphicsDevice.Viewport.Height / baseHeight;
-        return Matrix.CreateScale(scaleX, scaleY, 1f);
+        return Matrix.CreateScale(scaleX * multiplayX, scaleY * multiplayY, 1f);
     }
 
     public void LoadContent(ContentManager content)
     {
-        font = content.Load<SpriteFont>("Content/Fonts/File"); //Assuming you have a SpriteFont named "myFont" added in your content.
-
+        font = content.Load<SpriteFont>("Fonts/File"); //Assuming you have a SpriteFont named "myFont" added in your content.
+        spriteBatch1 = new SpriteBatch(Game1.Instance.GraphicsDevice);
     }
 
     public void Update(GameTime gameTime)
@@ -56,10 +63,13 @@ public class ScreenManager
 
     public void Draw(GameTime gameTime,SpriteBatch spriteBatch)
     {
+
         frameCounter++;
         string fps = string.Format("FPS: {0}", frameRate);
-        spriteBatch.DrawString(font, fps, new Vector2(33, 33), Color.Black);
-        spriteBatch.DrawString(font, fps, new Vector2(32, 32), Color.White);
+        spriteBatch1.Begin(samplerState: SamplerState.PointWrap,transformMatrix:Game1.Instance.screenManager.GetScaleMatrix(2,2));
+        spriteBatch1.DrawString(font, fps, new Vector2(33, 33), Color.Black);
+        spriteBatch1.DrawString(font, fps, new Vector2(32, 32), Color.White);
+        spriteBatch1.End();
     }
 
 }

@@ -1,0 +1,91 @@
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\Buildings\Cyan\CyanTaverns_0.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\Character\girl.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\Fonts\File.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\Ground\Cliff-Water_0.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\Ground\DeadGrass_0.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\map\ge.tmx
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\map\ge.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\map\ob.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\map\ob_0.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\map\Solaria Demo Update 01.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\map\Solaria Demo Update 01_0.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\map\treeTwo_0.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\Miscellaneous\Portal_0.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\soundtrack\Celestial.ogg
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\soundtrack\Celestial.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\soundtrack\Foggy Woods.ogg
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\soundtrack\Foggy Woods.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\soundtrack\Nocturnal Mysteries.ogg
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\soundtrack\Nocturnal Mysteries.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\soundtrack\Red Carpet Wooden Floor.ogg
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\soundtrack\Red Carpet Wooden Floor.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\soundtrack\The Arrival (BATTLE II).ogg
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\soundtrack\The Arrival (BATTLE II).xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\soundtrack\Windless Slopes.ogg
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Content\soundtrack\Windless Slopes.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\AdilGame.exe
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\AdilGame.deps.json
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\AdilGame.runtimeconfig.json
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\AdilGame.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\AdilGame.pdb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\AssetManagementBase.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Cyotek.Drawing.BitmapFont.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\DdsKtxXna.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\FontStashSharp.Base.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\FontStashSharp.MonoGame.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\FontStashSharp.Rasterizers.StbTrueTypeSharp.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\info.lundin.math.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.Bcl.TimeProvider.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.Extensions.Features.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.Extensions.Logging.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\MonoGame.Framework.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Myra.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\StbImageSharp.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\StbTrueTypeSharp.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\System.IO.Pipelines.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\System.Text.Encodings.Web.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\System.Text.Json.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\System.Threading.Channels.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\XNAssets.MonoGame.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\runtimes\linux-x64\native\libopenal.so.1
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\runtimes\osx\native\libSDL2.dylib
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\runtimes\osx\native\libopenal.1.dylib
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\runtimes\win-x64\native\SDL2.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\runtimes\win-x64\native\soft_oal.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\runtimes\win-x86\native\SDL2.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\runtimes\win-x86\native\soft_oal.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\MonoGame.Extended.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\MonoGame.Extended.Graphics.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\MonoGame.Extended.Tiled.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\MonoGame.Extended.pdb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\MonoGame.Extended.xml
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\MonoGame.Extended.Graphics.pdb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\MonoGame.Extended.Graphics.xml
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net7.0\MonoGame.Extended.Tiled.pdb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net7.0\AdilGame.csproj.AssemblyReference.cache
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net7.0\AdilGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net7.0\AdilGame.AssemblyInfoInputs.cache
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net7.0\AdilGame.AssemblyInfo.cs
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net7.0\AdilGame.csproj.CoreCompileInputs.cache
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net7.0\AdilGame.csproj.CopyComplete
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net7.0\AdilGame.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net7.0\refint\AdilGame.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net7.0\AdilGame.pdb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net7.0\AdilGame.genruntimeconfig.cache
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net7.0\ref\AdilGame.dll
