@@ -1,6 +1,7 @@
 using AdilGame;
 using AdilGame.Components;
 using AdilGame.Interfaces;
+using AdilGame.Logic.Weapon;
 using AdilGame.Network;
 using AdilGame.System;
 using Microsoft.AspNetCore.SignalR.Client;
@@ -25,13 +26,10 @@ public class PlayerController : Component, IStatus, IMovement, IGameObject
     public int SpeedMultiplier { get; set; }
     public int Health { get; set; } = 100;
     public int Speed { get; set; } = 100;
-    public bool ConnectToServer { get; set; } = true;
-    Player Player;
-    public List<PlayerController> PlayerControllers { get; set; } = new List<PlayerController>();
+    public Weapon EquipedWeapon { get; set; }
     public Render2D render2D { get; set; }
     ColliderComponent Collider { get; set; }
     MouseState currentMouseState;
-    MouseState previousMouseState;
 
     public PlayerController()
     {
@@ -39,7 +37,7 @@ public class PlayerController : Component, IStatus, IMovement, IGameObject
 
     private void LoadAnimations()
     {
-        var Arthax = render2D.LoadTexture("Character/girl");
+        var Arthax = render2D.LoadTexture("Character/girl",32,32);
 
         render2D.AddAnimation("Idle", new Animation(Arthax, 0, 1, 0.4f));
         render2D.AddAnimation("Walk", new Animation(Arthax, 24, 31, 0.2f));
@@ -56,23 +54,22 @@ public class PlayerController : Component, IStatus, IMovement, IGameObject
         gameObject.Tag = "player";
         Collider = gameObject.AddComponent<ColliderComponent>();
         Collider.IsDynamic = true;
-        var RangeCollider = gameObject.AddComponent<ColliderComponent>();
-        RangeCollider.Radius = 30;
         Collider.Radius = 7;
+        Collider.ShowCollider = false;
         render2D = gameObject.AddComponent<Render2D>();
-        if (Collider != null && RangeCollider != null)
+        if (Collider != null )
         {
             Collider.OnCollision += HandleCollision;
-            RangeCollider.OnCollision += HandleLargeCollision;
         }
         LoadAnimations();
-
+        EquipedWeapon = gameObject.AddComponent<Bow>();
+        render2D.Origin = new Vector2(gameObject.Transform.Scale.X / 2, gameObject.Transform.Scale.Y / 2);
 
 
     }
     IStatus a;
 
-    private void FlipCharacterBasedOnMousePosition(float MouseX, float CharacterX)
+    public void FlipCharacterBasedOnMousePosition(float MouseX, float CharacterX)
     {
         bool shouldFaceLeft = MouseX < CharacterX;
         gameObject.GetComponent<Render2D>()?.FlipAnimation(shouldFaceLeft);
@@ -88,19 +85,25 @@ public class PlayerController : Component, IStatus, IMovement, IGameObject
             currentMouseState = Mouse.GetState();
             var mouseInWorld = Game1.Instance.map._camera.ScreenToWorld(currentMouseState.X, currentMouseState.Y);
             FlipCharacterBasedOnMousePosition(mouseInWorld.X, gameObject.Transform.Position.X);
-
+            if (currentMouseState.LeftButton == ButtonState.Pressed)
+            {
+                EquipedWeapon.weaponState = WeaponState.Attacking;
+                EquipedWeapon.Fire();
+            }
+            else
+            {
+                EquipedWeapon.weaponState = WeaponState.None;
+            }
+            PlayerNetworkManager.Instance.SendMouseLocationToServer(Id,mouseInWorld.X,mouseInWorld.Y);
         }
+  
 
     }
 
     public override void Update(GameTime gameTime)
     {
         MouseUpdate();
-        if (currentMouseState.LeftButton == ButtonState.Pressed && previousMouseState.LeftButton == ButtonState.Released)
-        {
-            // Handle left mouse button click
-        }
-
+        
         Move(gameTime); // Handle Input and move the player.
 
         var animation = State switch
@@ -119,12 +122,14 @@ public class PlayerController : Component, IStatus, IMovement, IGameObject
     {
 
         a = gameObject.GetComponentByInterface<IStatus>();
+        Console.WriteLine("SMALL COLLISION");
+
 
     }
 
     private void HandleLargeCollision(GameObject gameObject)
     {
-        Console.WriteLine(gameObject.GameObjectId);
+        Console.WriteLine("Large COLLISION");
 
     }
 
@@ -177,13 +182,8 @@ public class PlayerController : Component, IStatus, IMovement, IGameObject
             {
                 direction.Normalize();
                 Collider.Velocity = direction * Speed;
-                //State = CharcaterStatu.Walk;
-                //Player.Id = Id;
-                //Player.Name = Name;
-                //Player.State = State;
-                //Player.X = gameObject.Transform.Position.X;
-                //Player.Y = gameObject.Transform.Position.Y;
-                PlayerNetworkManager.Instance.UpdatePlayerPosition(new Player { Id = Id, MouseX = MouseX,MouseY = MouseY,X = gameObject.Transform.Position.X,Y = gameObject.Transform.Position.Y});
+                State = CharcaterStatu.Walk;
+                PlayerNetworkManager.Instance.SendPlayerPositionToServer(new Player { Id = Id, MouseX = MouseX,MouseY = MouseY,X = gameObject.Transform.Position.X,Y = gameObject.Transform.Position.Y});
 
                 return direction;
             }

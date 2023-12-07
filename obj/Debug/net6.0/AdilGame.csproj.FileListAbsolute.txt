@@ -1362,6 +1362,7 @@ C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\soundtr
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\soundtrack\The Arrival (BATTLE II).xnb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\soundtrack\Windless Slopes.ogg
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\soundtrack\Windless Slopes.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\Weapon\Full Sheet.xnb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.exe
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.deps.json
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.runtimeconfig.json

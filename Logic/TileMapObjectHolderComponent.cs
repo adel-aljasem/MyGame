@@ -12,12 +12,13 @@ using System.Threading.Tasks;
 
 namespace AdilGame.Logic
 {
-    public class TileMapObjectHolderComponent : Component , IStatus
+    public class TileMapObjectHolderComponent : Component, IStatus
     {
         public TiledMapTileObject TiledMapObject { get; set; }
         public Render2D render2D { get; set; }
         public int Health { get; set; }
         public CharcaterStatu State { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Speed { get; set; }
 
         Rectangle rectangle;
 
@@ -45,7 +46,8 @@ namespace AdilGame.Logic
 
             render2D.Position = TiledMapObject.Position;
             render2D.SourceRectangle = rectangle;
-            render2D.LoadTexture("map/ob_0");
+            render2D.Origin = new Vector2(render2D.SourceRectangle.Width / 2, render2D.SourceRectangle.Height / 2);
+            render2D.LoadTexture("map/ob_0", 64, 64);
 
         }
 

@@ -72,7 +72,7 @@ namespace AdilGame.World
                 var collider = gameObject.AddComponent<ColliderComponent>();
                 collider.IsDynamic = false;
                 var objectholder = gameObject.AddComponent<TileMapObjectHolderComponent>();
-                collider.LetMeDraw = true;
+                collider.TileMapOptomaiztion = true;
                 // Cast obj to TiledMapTileObject to access the Tile property
                 if (obj is TiledMapTileObject tileObject && tileObject.Tile != null)
                 {
@@ -88,8 +88,7 @@ namespace AdilGame.World
                     }
                 }
 
-                Core.Instance.AddGameObject(gameObject);
-                Core.Instance.spatialGrid.AddObject(gameObject);
+                Core.Instance.GameObjectSystem.AddGameObject(gameObject);
             }
         }
 

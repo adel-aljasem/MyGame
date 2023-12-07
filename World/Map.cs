@@ -58,7 +58,7 @@ namespace AdilGame.World
 
         public void GetPlayer()
         {
-            Core.Instance.GetAllGameObjects().ForEach(x =>
+            Core.Instance.GameObjectSystem.GetAllGameObjects().ForEach(x =>
             {
                 var playerController = x.GetComponent<PlayerController>();
                 if (playerController != null && Player == null)

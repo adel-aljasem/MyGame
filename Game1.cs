@@ -39,16 +39,14 @@ public class Game1 : Game
         playerNameInputUI1 = new PlayerNameInputUI();
         map.Initialize();
 
-        for(int i = 0; i < 500; i++)
-        {
-            PlayerNetworkManager.Instance.ConnectServer($"e");
 
-        }
+        PlayerNetworkManager.Instance.ConnectServer($"e");
+
+
 
     }
 
 
-    public string ID { get; set; }
     protected override async void LoadContent()
     {
         spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -102,7 +100,7 @@ public class Game1 : Game
     protected override void OnExiting(Object sender, EventArgs args)
     {
         base.OnExiting(sender, args);
-       
+
         //PlayerNetworkManager.Instance.DisconnectFromGameServer(PlayerNetworkManager.Instance.playerId);
         // Stop the threads
     }

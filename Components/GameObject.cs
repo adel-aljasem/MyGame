@@ -101,9 +101,13 @@ public sealed class GameObject
 
     public void Update(GameTime gameTime)
     {
-        foreach (var component in _components)
+        for (int i = 0; i < _components.Count; i++)
         {
-            component.Update(gameTime);
+            var component = _components[i];
+            if (component.IsEnabled)
+            {
+                component.Update(gameTime);
+            }
         }
     }
 
@@ -111,7 +115,10 @@ public sealed class GameObject
     {
         foreach (var component in _components)
         {
-            component.Draw(spriteBatch, gameTime);
+            if (component.IsEnabled)
+            {
+                component.Draw(spriteBatch, gameTime);
+            }
         }
     }
 

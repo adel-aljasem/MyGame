@@ -25,7 +25,7 @@ namespace AdilGame.Network
         public PlayerNetworkManager()
         {
 
-            Core.Instance.hubConnection.On<List<Player>>("OnConnectedPlayer", PlayersOnServer =>
+            Core.Instance.NetworkSystem.hubConnection.On<List<Player>>("OnConnectedPlayer", PlayersOnServer =>
             {
                 // Queue the action to be processed on the main thread
                 mainThreadActions.Enqueue(() =>
@@ -48,9 +48,7 @@ namespace AdilGame.Network
                             player.OnlineID = p.OnlineID;
                             player.gameObject.Transform.Position = new Vector2(p.X, p.Y);
                             playerControllers.Add(player);
-                            Core.Instance.AddGameObject(playercon);
-                            Core.Instance.spatialGrid.AddObject(playercon);
-                            Core.Instance.player = playercon;
+                            Core.Instance.GameObjectSystem.AddGameObject(playercon);
 
                         }
                     }
@@ -59,7 +57,7 @@ namespace AdilGame.Network
 
             });
 
-            Core.Instance.hubConnection.On<string>("RemovePlayerFromList", async playerid =>
+            Core.Instance.NetworkSystem.hubConnection.On<string>("OnRemovePlayerFromList", async playerid =>
             {
                 // Handle player disconnection logic here.
                 // You can remove the player from your game world.
@@ -73,9 +71,9 @@ namespace AdilGame.Network
                 }
             });
 
-            Core.Instance.hubConnection.On<Player>("PlayerPositionUpdated", (player) =>
+            Core.Instance.NetworkSystem.hubConnection.On<Player>("OnPlayerPositionUpdate", (player) =>
             {
-                foreach (GameObject playerController in Core.Instance.GetAllGameObjects())
+                foreach (GameObject playerController in Core.Instance.GameObjectSystem.GetAllGameObjects())
                 {
                     if (playerController?.GetComponent<PlayerController>()?.Id == player.Id)
                     {
@@ -85,15 +83,26 @@ namespace AdilGame.Network
                 }
             });
 
+            Core.Instance.NetworkSystem.hubConnection.On<string,float,float>("OnMousePositionUpdate", (playerId,MouseX,MouseY) =>
+            {
+                foreach (GameObject playerController in Core.Instance.GameObjectSystem.GetAllGameObjects())
+                {
+                    if (playerController?.GetComponent<PlayerController>()?.Id == playerId)
+                    {
+                        playerController.GetComponent<PlayerController>().FlipCharacterBasedOnMousePosition(MouseX, MouseY);
+
+                    }
+                }
+            });
 
         }
 
-        public async Task SendMouseLocationToServer(Player player)
+        public async Task SendMouseLocationToServer(string playerid, float mouseX, float MouseY)
         {
             try
             {
                 // Send the updated position to the server.
-                await Core.Instance.hubConnection.SendAsync("UpdateMosueLocation", player);
+                await Core.Instance.NetworkSystem.hubConnection.SendAsync("UpdateMosueLocation", playerid, mouseX, MouseY);
             }
             catch (Exception ex)
             {
@@ -103,12 +112,12 @@ namespace AdilGame.Network
 
 
 
-        public async Task UpdatePlayerPosition(Player player)
+        public async Task SendPlayerPositionToServer(Player player)
         {
             try
             {
                 // Send the updated position to the server.
-                await Core.Instance.hubConnection.SendAsync("UpdatePlayerPosition", player);
+                await Core.Instance.NetworkSystem.hubConnection.SendAsync("UpdatePlayerPosition", player);
             }
             catch (Exception ex)
             {
@@ -120,19 +129,16 @@ namespace AdilGame.Network
 
         public async Task ConnectServer(string playerName)
         {
-            r.Next(2000);
             Player player = new Player
             {
                 Id = playerId,
                 Name = playerName,
-                X = r.Next(2000),
-                Y = r.Next(2000)
+                X = r.Next(200),
+                Y = r.Next(200)
             };
-
-
             try
             {
-                await Core.Instance.hubConnection.SendAsync("PlayerConnected", player);
+                await Core.Instance.NetworkSystem.hubConnection.SendAsync("PlayerConnected", player);
             }
             catch (Exception ex)
             {
@@ -147,7 +153,7 @@ namespace AdilGame.Network
         {
             try
             {
-                await Core.Instance.hubConnection.SendAsync("PlayerDisconnected", playerId);
+                await Core.Instance.NetworkSystem.hubConnection.SendAsync("PlayerDisconnected", playerId);
             }
             catch (Exception ex)
             {
