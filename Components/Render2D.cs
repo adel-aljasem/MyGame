@@ -77,7 +77,7 @@ namespace AdilGame.Components
         }
 
 
-        public override void Awake()
+        internal override void Awake()
         {
             Position = gameObject.Transform.Position;
             Origin = gameObject.Transform.Position;
@@ -86,7 +86,7 @@ namespace AdilGame.Components
 
 
 
-        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+        internal override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             if (Texture != null && !isThereAnimation)
             {
@@ -99,7 +99,7 @@ namespace AdilGame.Components
         }
 
 
-        public override void Update(GameTime gameTime)
+        internal override void Update(GameTime gameTime)
         {
             AnimationManagerComponent.Update(gameTime);
 

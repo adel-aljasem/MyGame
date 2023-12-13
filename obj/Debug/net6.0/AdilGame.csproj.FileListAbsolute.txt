@@ -1337,6 +1337,7 @@ C:\Users\zoomb\source\repos\adel-aljasem\MyGame\GameFiles\net6.0\MonoGame.Extend
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\GameFiles\net6.0\MonoGame.Extended.Graphics.pdb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\GameFiles\net6.0\MonoGame.Extended.Graphics.xml
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\GameFiles\net6.0\MonoGame.Extended.Tiled.pdb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\Buildings\Cyan\CyanTaverns_0.xnb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\Character\girl.xnb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\Fonts\File.xnb
@@ -1366,8 +1367,6 @@ C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\Weapon\
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.exe
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.deps.json
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.runtimeconfig.json
-C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.dll
-C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.pdb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AssetManagementBase.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Cyotek.Drawing.BitmapFont.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\DdsKtxXna.dll
@@ -1375,6 +1374,8 @@ C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\FontStashSharp.
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\FontStashSharp.MonoGame.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\FontStashSharp.Rasterizers.StbTrueTypeSharp.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\info.lundin.math.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\MessagePack.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\MessagePack.Annotations.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Connections.Client.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Connections.Common.dll
@@ -1382,6 +1383,7 @@ C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.AspNe
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Common.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Protocols.MessagePack.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.Bcl.TimeProvider.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
@@ -1391,6 +1393,7 @@ C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.Exten
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\MonoGame.Framework.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Myra.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Newtonsoft.Json.dll
@@ -1428,4 +1431,5 @@ C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net6.0\AdilGame.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net6.0\refint\AdilGame.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net6.0\AdilGame.pdb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net6.0\AdilGame.genruntimeconfig.cache
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.pdb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net6.0\ref\AdilGame.dll

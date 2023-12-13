@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdilGame.Logic.Weapon.bullet
+namespace AdilGame.Logic.Weapons.bullet
 {
     public class Arrow : Bullet
     {
@@ -26,8 +26,8 @@ namespace AdilGame.Logic.Weapon.bullet
             }
 
         }
-     
-        public override void Awake()
+
+        internal override void Awake()
         {
             base.Awake();
             var arrowTexture = Render2D.LoadTexture("Weapon/Full Sheet",16,16);
@@ -35,7 +35,7 @@ namespace AdilGame.Logic.Weapon.bullet
 
         }
 
-        public override void Update(GameTime gameTime)
+        internal override void Update(GameTime gameTime)
         {
             Render2D.Origin = new Vector2(Render2D.SourceRectangle.Width /2 , Render2D.SourceRectangle.Height /2);
             base.Update(gameTime);

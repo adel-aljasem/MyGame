@@ -8,12 +8,15 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Myra.MML;
 
-public sealed class GameObject
+
+public sealed class GameObject 
 {
     public Guid GameObjectId { get; set; }
     public string GameObjectName { get; set; }
     public string Tag { get; set; }
     public Transform Transform { get; set; } // Assuming you have a Transform class to handle position, rotation, and scale.
+    private double networkUpdateElapsed = 0;
+    private const double NetworkUpdateInterval = 1/15.0; // 10 times per second
 
     public GameObject()
     {
@@ -98,9 +101,18 @@ public sealed class GameObject
         return _components.OfType<T>().ToList();
     }
 
+    public void RemoveComponent<T>() where T : Component
+    {
+        var component = _components.OfType<T>().FirstOrDefault();
+        if (component != null)
+        {
+            _components.Remove(component);
+        }
+    }
 
     public void Update(GameTime gameTime)
     {
+        networkUpdateElapsed += gameTime.ElapsedGameTime.TotalSeconds;
         for (int i = 0; i < _components.Count; i++)
         {
             var component = _components[i];
@@ -108,7 +120,19 @@ public sealed class GameObject
             {
                 component.Update(gameTime);
             }
+            // Check if it's time to call NetworkUpdate
+            if (networkUpdateElapsed >= NetworkUpdateInterval)
+            {
+                component.NetworkUpdate(gameTime);
+            }
+
         }
+        // Reset the timer after NetworkUpdate has been called on all components
+        if (networkUpdateElapsed >= NetworkUpdateInterval)
+        {
+            networkUpdateElapsed = 0;
+        }
+
     }
 
     public void Draw(SpriteBatch spriteBatch, GameTime gameTime)

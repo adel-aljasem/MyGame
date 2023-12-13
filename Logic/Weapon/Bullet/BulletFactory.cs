@@ -1,4 +1,4 @@
-﻿using AdilGame.Logic.Weapon.bullet;
+﻿using AdilGame.Logic.Weapons.bullet;
 
 public class BulletFactory
 {

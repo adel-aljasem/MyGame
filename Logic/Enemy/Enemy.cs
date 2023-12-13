@@ -38,7 +38,7 @@ namespace AdilGame.Logic.Enemy
         
         }
 
-        public override void Awake()
+        internal override void Awake()
         {
             Render2d = gameObject.AddComponent<Render2D>();
             colliderRange.OnCollision += OnEnterRange;
@@ -66,7 +66,7 @@ namespace AdilGame.Logic.Enemy
         {
         }
 
-        public override void Update(GameTime gameTime)
+        internal override void Update(GameTime gameTime)
         {
             previousPosition = gameObject.Transform.Position;
             FlipCharacterBasedOnMovingPosition();

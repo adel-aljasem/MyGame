@@ -31,6 +31,10 @@ namespace AdilGame.System
             return allGameObjects.FirstOrDefault(g => g.Tag == tag);
         }
 
+        public List<GameObject> GetGameObjectsListByTag(string tag)
+        {
+            return allGameObjects.Where(go => go.Tag == tag).ToList();
+        }
         public void UpdateGameObjects(GameTime gameTime)
         {
             for (int i = 0; i < allGameObjects.Count; i++)

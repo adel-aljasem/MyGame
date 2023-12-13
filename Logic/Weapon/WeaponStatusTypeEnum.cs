@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdilGame.Logic.Weapon
+namespace AdilGame.Logic.Weapons
 {
     public enum WeaponStatusTypeEnum
     {

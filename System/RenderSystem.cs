@@ -12,15 +12,16 @@ namespace AdilGame.System
     {
         public void Draw(SpriteBatch spriteBatch, List<GameObject> gameObjects, GameTime gameTime)
         {
-            var sortedObjects = gameObjects
-                .OfType<GameObject>()
+            // Create a copy of the gameObjects list to avoid InvalidOperationException
+            var gameObjectsCopy = new List<GameObject>(gameObjects);
+
+            var sortedObjects = gameObjectsCopy
                 .OrderBy(gameobject => gameobject.Transform.Position.Y)
                 .ToArray(); // Create a non-dynamic snapshot of the game objects
 
-            for (int i = 0; i < sortedObjects.Length; i++)
+            foreach (var gameObject in sortedObjects)
             {
-                sortedObjects[i].Draw(spriteBatch, gameTime);
-
+                gameObject.Draw(spriteBatch, gameTime);
             }
         }
 

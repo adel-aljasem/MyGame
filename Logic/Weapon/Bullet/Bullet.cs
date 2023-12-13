@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdilGame.Logic.Weapon.bullet
+namespace AdilGame.Logic.Weapons.bullet
 {
     public abstract class Bullet : Component 
     {
@@ -24,12 +24,12 @@ namespace AdilGame.Logic.Weapon.bullet
         protected Action _childCallback;
 
         public abstract void OnHit(GameObject gameObject);
-        
 
 
 
 
-        public override void Awake()
+
+        internal override void Awake()
         {
             ColliderComponent = gameObject.AddComponent<ColliderComponent>();
             ColliderComponent.ShowCollider = false;
@@ -74,7 +74,7 @@ namespace AdilGame.Logic.Weapon.bullet
         }
 
 
-        public override void Update(GameTime gameTime)
+        internal override void Update(GameTime gameTime)
         {
 
             if (!IsActive) return;

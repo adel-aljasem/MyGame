@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using System.Net.Http;
+using Microsoft.Extensions.Logging;
 
 namespace AdilGame.System
 {
@@ -13,7 +16,8 @@ namespace AdilGame.System
 
         public NetworkSystem(string url)
         {
-            hubConnection = new HubConnectionBuilder().WithUrl(url).Build();
+ 
+            hubConnection = new HubConnectionBuilder().WithUrl(url, opt => { opt.Transports = Microsoft.AspNetCore.Http.Connections.HttpTransportType.WebSockets; }).AddMessagePackProtocol().Build();
             StartConnection();
         }
 

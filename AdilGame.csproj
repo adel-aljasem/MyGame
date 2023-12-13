@@ -17,7 +17,9 @@
     <EmbeddedResource Include="Icon.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MessagePack" Version="2.5.140" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" Version="8.0.0" />
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.1.303" />
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.1.303" />
     <PackageReference Include="Myra" Version="1.5.0" />
@@ -41,4 +43,10 @@
     <Message Text="Restoring dotnet tools" Importance="High" />
     <Exec Command="dotnet tool restore" />
   </Target>
+  <ItemGroup>
+    <None Remove="C:\Users\zoomb\.nuget\packages\zstdnet\1.4.5\build\x86\libzstd.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="C:\Users\zoomb\.nuget\packages\zstdnet\1.4.5\build\x64\libzstd.dll" />
+  </ItemGroup>
 </Project>

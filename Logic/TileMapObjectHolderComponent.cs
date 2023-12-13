@@ -30,7 +30,7 @@ namespace AdilGame.Logic
 
 
 
-        public override void Awake()
+        internal override void Awake()
         {
             render2D = gameObject.AddComponent<Render2D>();
 
@@ -51,7 +51,7 @@ namespace AdilGame.Logic
 
         }
 
-        public override void Update(GameTime gameTime)
+        internal override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
 
@@ -74,10 +74,6 @@ namespace AdilGame.Logic
             }
         }
 
-        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
-        {
-            base.Draw(spriteBatch, gameTime);
-        }
 
         public void DmgTaken(int dmg)
         {

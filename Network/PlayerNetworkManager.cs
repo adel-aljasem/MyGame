@@ -1,15 +1,11 @@
-﻿using AdilGame.Interfaces;
-using AdilGame.System;
+﻿using AdilGame.Network.Data;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Xna.Framework;
-using StbImageSharp;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AdilGame.Network
@@ -18,7 +14,7 @@ namespace AdilGame.Network
     {
         public static PlayerNetworkManager Instance { get; set; } = new PlayerNetworkManager();
         public List<PlayerController> playerControllers { get; set; } = new List<PlayerController>();
-        public string playerId { get; set; }
+        public int playerId { get; set; } = 0;
         private List<Player> players { get; set; } = new List<Player>();
         public ConcurrentQueue<Action> mainThreadActions = new ConcurrentQueue<Action>();
 
@@ -32,24 +28,36 @@ namespace AdilGame.Network
                 {
                     // All logic that modifies the game state goes here
                     players = PlayersOnServer;
-                    if (playerId == null)
+                    if (playerId == 0)
                     {
                         playerId = PlayersOnServer.Last().Id;
                     }
 
-                    foreach (var p in players)
+                    for (int i = 0; i < players.Count; i++)
                     {
-                        if (playerControllers.FirstOrDefault(w => w.Id == p.Id) == null)
+                        var p = players[i];
+                        bool playerExists = false;
+
+                        for (int j = 0; j < playerControllers.Count; j++)
+                        {
+                            if (playerControllers[j].PlayerComingData.Id == p.Id)
+                            {
+                                playerExists = true;
+                                break;
+                            }
+                        }
+
+                        if (!playerExists)
                         {
                             GameObject playercon = new GameObject();
                             var player = playercon.AddComponent<PlayerController>();
-                            player.Id = p.Id;
-                            player.Name = p.Name;
-                            player.OnlineID = p.OnlineID;
-                            player.gameObject.Transform.Position = new Vector2(p.X, p.Y);
+                            player.PlayerComingData.Id = p.Id;
+                            player.PlayerComingData.Name = p.Name;
+                            player.PlayerComingData.OnlineID = p.OnlineID;
+                            player.gameObject.Transform.Position = new Vector2(p.MovementData.PositionX, p.MovementData.PositionY);
+                            player.PlayerGoingData.MouseData.Id = p.Id;
                             playerControllers.Add(player);
                             Core.Instance.GameObjectSystem.AddGameObject(playercon);
-
                         }
                     }
                     Console.WriteLine($"Player connected: {PlayersOnServer.Last().Name} {PlayersOnServer.Last().OnlineID}");
@@ -57,52 +65,100 @@ namespace AdilGame.Network
 
             });
 
-            Core.Instance.NetworkSystem.hubConnection.On<string>("OnRemovePlayerFromList", async playerid =>
+            Core.Instance.NetworkSystem.hubConnection.On<string>("OnRemovePlayerFromList", playerid =>
             {
                 // Handle player disconnection logic here.
                 // You can remove the player from your game world.
-                Player disconnectedPlayer = players.Find(p => p.Id == playerid);
+                Player disconnectedPlayer = players.Find(p => p.OnlineID == playerid);
                 if (disconnectedPlayer != null)
                 {
                     players.Remove(disconnectedPlayer);
-                    PlayerController playerToRemove = playerControllers.Find(w => w.Id == playerid);
+                    PlayerController playerToRemove = playerControllers.Find(w => w.PlayerComingData.OnlineID == playerid);
                     playerControllers.Remove(playerToRemove);
+                    Core.Instance.GameObjectSystem.RemoveGameObject(playerToRemove.gameObject);
                     Console.WriteLine($"Player disconnected: {disconnectedPlayer.Name} {disconnectedPlayer.Id}");
                 }
             });
 
-            Core.Instance.NetworkSystem.hubConnection.On<Player>("OnPlayerPositionUpdate", (player) =>
-            {
-                foreach (GameObject playerController in Core.Instance.GameObjectSystem.GetAllGameObjects())
-                {
-                    if (playerController?.GetComponent<PlayerController>()?.Id == player.Id)
-                    {
-                        playerController.GetComponent<PlayerController>().UpdateOtherPlayersPosition(player);
+            //Core.Instance.NetworkSystem.hubConnection.On<byte[]>("OnPlayerPositionUpdate", (playerMovement) =>
+            //{
+            //    List<GameObject> allGameObjects = Core.Instance.GameObjectSystem.GetGameObjectsListByTag("player");
+            //    for (int i = 0; i < allGameObjects.Count; i++)
+            //    {
+            //        GameObject playerControllerObject = allGameObjects[i];
+            //        if (playerControllerObject != null)
+            //        {
+            //            PlayerController playerController = playerControllerObject.GetComponent<PlayerController>();
+            //            //var Player = Compressing.DecompressPlayer(player);
+            //            //if (playerController?.Id == playerMovement.IdPlayer)
+            //            //{
+            //            //    playerController.PlayerComingData.MovementData.VelocityX = playerMovement.VelocityX;
+            //            //    playerController.PlayerComingData.MovementData.VelocityY = playerMovement.VelocityY;
+            //            //    playerController.PlayerComingData.MovementData.PositionX = playerMovement.PositionX;
+            //            //    playerController.PlayerComingData.MovementData.PositionY = playerMovement.PositionY;
+            //            //    playerController.PlayerComingData.MovementData.State = playerMovement.State;
+            //            //    //playerController.UpdateOtherPlayersPosition(player);
+            //            //    break; // Assuming you only expect one match for the player ID, exit the loop
+            //            //}
+            //        }
+            //    }
+            //});
 
+            //Core.Instance.NetworkSystem.hubConnection.On<byte[], float>("OnMousePositionUpdate", (Mouse,characterX) =>
+            //{
+            //    List<GameObject> allGameObjects = Core.Instance.GameObjectSystem.GetGameObjectsListByTag("player");
+            //    for (int i = 0; i < allGameObjects.Count; i++)
+            //    {
+            //        GameObject playerController = allGameObjects[i];
+            //        if (playerController != null)
+            //        {
+            //            PlayerController controller = playerController.GetComponent<PlayerController>();
+            //            //var playerid = Compressing.DecompressString(playerId);
+            //            //if (controller?.Id == Mouse.Id)
+            //            //{
+            //            //    //float xmouse = Compressing.DecompressFloat(MouseX);
+            //            //    //float ymouse = Compressing.DecompressFloat(MouseY);
+            //            //    //float xcharater = Compressing.DecompressFloat(characterX);
+            //            //    controller.PlayerComingData.MouseData.MouseX = Mouse.MouseX;
+            //            //    controller.PlayerComingData.MouseData.MouseY = Mouse.MouseY;
+            //            //    //controller.FlipCharacterBasedOnMousePosition(MouseX, MouseY, characterX);
+            //            //    break; // Assuming you only expect one match, you can break out of the loop once found
+            //            //}
+            //        }
+            //    }
+            //});
+
+
+            Core.Instance.NetworkSystem.hubConnection.On<Player>("UpdatePlayerDataOnClient", (player) =>
+            {
+                List<GameObject> allGameObjects = Core.Instance.GameObjectSystem.GetGameObjectsListByTag("player");
+                for (int i = 0; i < allGameObjects.Count; i++)
+                {
+                    GameObject playerController = allGameObjects[i];
+                    if (playerController != null)
+                    {
+                        PlayerController controller = playerController.GetComponent<PlayerController>();
+                        //var playerid = Compressing.DecompressString(playerId);
+                        if (controller?.PlayerComingData.Id == player.Id)
+                        {
+
+                            controller.PlayerComingData = player;
+                            break; // Assuming you only expect one match, you can break out of the loop once found
+                        }
                     }
                 }
             });
-
-            Core.Instance.NetworkSystem.hubConnection.On<string,float,float>("OnMousePositionUpdate", (playerId,MouseX,MouseY) =>
-            {
-                foreach (GameObject playerController in Core.Instance.GameObjectSystem.GetAllGameObjects())
-                {
-                    if (playerController?.GetComponent<PlayerController>()?.Id == playerId)
-                    {
-                        playerController.GetComponent<PlayerController>().FlipCharacterBasedOnMousePosition(MouseX, MouseY);
-
-                    }
-                }
-            });
-
         }
 
-        public async Task SendMouseLocationToServer(string playerid, float mouseX, float MouseY)
+        public async Task SendMouseLocationToServer(MouseData mouseData)
         {
             try
             {
-                // Send the updated position to the server.
-                await Core.Instance.NetworkSystem.hubConnection.SendAsync("UpdateMosueLocation", playerid, mouseX, MouseY);
+                //byte[] idplayer = Compressing.CompressString(playerid);
+                //byte[] xmouse = Compressing.CompressFloat(mouseX);
+                //byte[] ymouse = Compressing.CompressFloat(MouseY);
+
+                await Core.Instance.NetworkSystem.hubConnection.SendAsync("UpdateMosueLocation", mouseData);
             }
             catch (Exception ex)
             {
@@ -112,12 +168,13 @@ namespace AdilGame.Network
 
 
 
-        public async Task SendPlayerPositionToServer(Player player)
+        public async Task SendPlayerPositionToServer(MovementData movementPlayer)
         {
             try
             {
+                //var Player = Compressing.CompressPlayer(player);
                 // Send the updated position to the server.
-                await Core.Instance.NetworkSystem.hubConnection.SendAsync("UpdatePlayerPosition", player);
+                await Core.Instance.NetworkSystem.hubConnection.SendAsync("UpdatePlayerPosition", movementPlayer);
             }
             catch (Exception ex)
             {
@@ -126,6 +183,19 @@ namespace AdilGame.Network
         }
         Random r = new Random();
 
+        public async Task SendUpdatePlayerDataToServer(Player player)
+        {
+            try
+            {
+                //var Player = Compressing.CompressPlayer(player);
+                // Send the updated position to the server.
+                await Core.Instance.NetworkSystem.hubConnection.SendAsync("UpdatePlayerData", player);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error updating player position: " + ex.Message);
+            }
+        }
 
         public async Task ConnectServer(string playerName)
         {
@@ -133,8 +203,7 @@ namespace AdilGame.Network
             {
                 Id = playerId,
                 Name = playerName,
-                X = r.Next(200),
-                Y = r.Next(200)
+                
             };
             try
             {
@@ -161,6 +230,8 @@ namespace AdilGame.Network
             }
         }
 
+
+       
 
     }
 }

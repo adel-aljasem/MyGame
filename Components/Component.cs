@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 
-public abstract class Component : IGameObject
+public abstract class Component 
 {
     public Component()
     {
@@ -25,7 +25,7 @@ public abstract class Component : IGameObject
     public void Disable() => IsEnabled = false;
     public void ToggleEnable() => IsEnabled = !IsEnabled;
 
-   
+
 
     //public T AddComponent<T>(T component) where T : Component, new()
     //{
@@ -43,17 +43,21 @@ public abstract class Component : IGameObject
     //{
     //    return gameObject._components.OfType<T>().ToList();
     //}
-    public virtual void Awake()
+    internal virtual void Awake()
     {
         
         
     }
 
-    public virtual void Update(GameTime gameTime)
+    internal virtual void Update(GameTime gameTime)
     {
 
     }
-    public virtual void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+    internal virtual void NetworkUpdate(GameTime gameTime)
+    { 
+
+    }
+    internal virtual void Draw(SpriteBatch spriteBatch, GameTime gameTime)
     {
 
     }

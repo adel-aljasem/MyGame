@@ -1,13 +1,7 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using AdilGame;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using AdilGame.Interfaces;
-using AdilGame.System;
-using AdilGame;
-using MonoGame.Extended;
-using AdilGame.Components;
 
 public class ColliderComponent : Component
 {
@@ -44,7 +38,7 @@ public class ColliderComponent : Component
         OnCollision?.Invoke(e);
     }
 
-    public override void Awake()
+    internal override void Awake()
     {
 
     }
@@ -57,7 +51,7 @@ public class ColliderComponent : Component
         Y = y;
     }
 
-    public override void Update(GameTime gameTime)
+    internal override void Update(GameTime gameTime)
     {
         UpdateCircle();
         UpdateColliderPosition(gameTime);
@@ -144,7 +138,7 @@ public class ColliderComponent : Component
         gameObject.Transform.Position += Velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
     }
 
-    public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+    internal override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
     {
 
         if (ShowCollider)

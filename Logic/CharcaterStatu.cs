@@ -1,4 +1,5 @@
-public enum CharcaterStatu
+
+public enum CharcaterStatu : byte
 {
     Idle,
     Walk,

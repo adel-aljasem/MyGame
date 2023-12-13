@@ -11,7 +11,7 @@ namespace AdilGame.Interfaces
     {
         public int Speed { get; set; }
         public int SpeedMultiplier { get; set; }
-        public Vector2 Move(GameTime gameTime);
+        public void Move(GameTime gameTime);
         public void Slow(int slowAmount);
         
     }

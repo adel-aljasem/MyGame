@@ -28,7 +28,6 @@ public class Core
         if (updateTask.IsCompleted)
         {
             updateTask = Task.Run(() => CollisionSystem.CheckCollisions(GameObjectSystem.GetAllGameObjects()));
-
         }
 
     }

@@ -7,16 +7,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AdilGame.Logic.Weapon.bullet;
+using AdilGame.Logic.Weapons.bullet;
 using Cyotek.Drawing.BitmapFont;
 using AdilGame.System;
+using AdilGame.Network.Data;
+using AdilGame.Logic.inventory.Items;
+using System.Threading;
 
-namespace AdilGame.Logic.Weapon
+namespace AdilGame.Logic.Weapons
 {
-    public abstract class Weapon : Component
+    public abstract class Weapon : Component , Iitem ,IWeaponData
     {
-        public abstract int Id { get; set; }
-        public string IdPlayer { get; set; }
+        public int Id { get; set; }
+        public WeaponTypeEnum WeaponTypeenum { get;  set; }
+        public string PlayerId { get; set; }
+        public string Description { get; set; }
+        public bool CanBeDropped { get; set; } = true;
         public int Level { get; set; }
         public int PlusHealth { get; set; }
         public string Name { get; set; }
@@ -59,13 +65,13 @@ namespace AdilGame.Logic.Weapon
         }
 
 
-        private void FlipWeaponBasedOnMouse()
+        public void FlipWeaponBasedOnMouse(bool shouldfaceleft)
         {
-            var currentMouseState = Mouse.GetState();
-            var mouseInWorld = Game1.Instance.map._camera.ScreenToWorld(currentMouseState.X, currentMouseState.Y);
+            //var currentMouseState = Mouse.GetState();
+            //var mouseInWorld = Game1.Instance.map._camera.ScreenToWorld(currentMouseState.X, currentMouseState.Y);
 
-            bool shouldFaceLeft = mouseInWorld.X < gameObject.Transform.Position.X;
-            if (shouldFaceLeft)
+            //bool shouldFaceLeft = mouseInWorld.X < gameObject.Transform.Position.X;
+            if (shouldfaceleft)
             {
                 Render2D.Position = WeaponPositionLeft;
                 Collider.Center = WeaponPositionLeft;
@@ -77,12 +83,12 @@ namespace AdilGame.Logic.Weapon
             }
 
         }
-        private void UpdateWeaponRotation()
+        public void UpdateWeaponRotation(float mouseX,float mouseY)
         {
             // Get the current mouse state and weapon's position
             var currentMouseState = Mouse.GetState();
-            var mouseInWorld = Game1.Instance.map._camera.ScreenToWorld(currentMouseState.X, currentMouseState.Y);
-
+            var mouseInWorld = new Vector2(mouseX,mouseY);
+            
             Vector2 weaponPosition = new Vector2(Render2D.Position.X, Render2D.Position.Y); // Assuming Render2D has a Position property
 
             // Calculate the direction vector
@@ -99,8 +105,10 @@ namespace AdilGame.Logic.Weapon
             Render2D.Rotation = angle;
         }
 
-        public override void Awake()
+        internal override void Awake()
         {
+            Guid guid = Guid.NewGuid();
+            Id = guid.GetHashCode();
             AdditionalStatuses = new Dictionary<WeaponStatusTypeEnum, int>();
             AddRandomStatuses();
             Render2D = gameObject.AddComponent<Render2D>();
@@ -112,13 +120,12 @@ namespace AdilGame.Logic.Weapon
         }
 
 
-        public override void Update(GameTime gameTime)
+        internal override void Update(GameTime gameTime)
         {
             if (fireCooldownTimer > 0)
             {
                 fireCooldownTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
             }
-            FlipWeaponBasedOnMouse();
             var animation = weaponState switch
             {
                 WeaponState.Attacking => "Attacking",
@@ -126,10 +133,6 @@ namespace AdilGame.Logic.Weapon
                 _ => "Idle"
             };
             Render2D.PlayAnimation(animation);
-            Render2D.Update(gameTime);
-
-            UpdateWeaponRotation();
-
             base.Update(gameTime);
         }
 

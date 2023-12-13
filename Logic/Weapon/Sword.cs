@@ -1,4 +1,5 @@
 ﻿using AdilGame.Interfaces;
+using AdilGame.Network.Data;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Timers;
@@ -8,11 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdilGame.Logic.Weapon
+namespace AdilGame.Logic.Weapons
 {
     public class Sword : Weapon
     {
-        public override int Id { get; set; } = 101;
         protected override Vector2 WeaponPositionRight { get; set; }
         protected override Vector2 WeaponPositionLeft { get; set; }
         private float rotationDuration = 0.2f; // Duration of the rotation in seconds
@@ -69,10 +69,10 @@ namespace AdilGame.Logic.Weapon
         }
 
 
-        public override void Awake()
+        internal override void Awake()
         {
             base.Awake();
-
+            WeaponTypeenum = WeaponTypeEnum.sword;
             var textrue = Render2D.LoadTexture("Weapon/Full Sheet", 16, 16);
             Render2D.DrawSprite(2);
             Render2D.Origin = new Vector2(6, 10);
@@ -80,7 +80,7 @@ namespace AdilGame.Logic.Weapon
 
         }
 
-        public override void Update(GameTime gameTime)
+        internal override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
 

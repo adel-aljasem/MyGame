@@ -1,4 +1,5 @@
-﻿using AdilGame.Logic.Weapon.bullet;
+﻿using AdilGame.Logic.Weapons.bullet;
+using AdilGame.Network.Data;
 using AdilGame.System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -9,11 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdilGame.Logic.Weapon
+namespace AdilGame.Logic.Weapons
 {
     public class Bow : Weapon
     {
-        public override int Id { get; set; } = 100;
         protected override Vector2 WeaponPositionRight { get; set; }
         protected override Vector2 WeaponPositionLeft { get; set; }
 
@@ -37,10 +37,10 @@ namespace AdilGame.Logic.Weapon
             }
 
         }
-        public override void Awake()
+        internal override void Awake()
         {
             base.Awake();
-
+            WeaponTypeenum = WeaponTypeEnum.bow;
             var textrue = Render2D.LoadTexture("Weapon/Full Sheet", 16, 16);
             Render2D.AddAnimation("Attacking", new Animation(textrue, 105, 107, 0.5f));
             Render2D.AddAnimation("Idle", new Animation(textrue, 106, 106, 100));
@@ -50,11 +50,10 @@ namespace AdilGame.Logic.Weapon
 
 
 
-        public override void Update(GameTime gameTime)
+        internal override void Update(GameTime gameTime)
         {
             WeaponPositionRight = gameObject.Transform.Position + new Vector2(6, -2);
             WeaponPositionLeft = gameObject.Transform.Position + new Vector2(-5, -2);
-
             base.Update(gameTime);
         }
 
