@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using AdilGame.Interfaces;
 using AdilGame.System;
 using Microsoft.Xna.Framework;
@@ -68,6 +69,32 @@ public sealed class GameObject
         _components.Add(component);
         return component;
     }
+
+    public T AddComponentByInterface<T>() where T : class
+    {
+        // Find a type that implements the interface T and has a parameterless constructor
+        var type = Assembly.GetExecutingAssembly().GetTypes()
+                    .FirstOrDefault(t => typeof(T).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract && t.GetConstructor(Type.EmptyTypes) != null);
+
+        if (type != null)
+        {
+            // Create an instance of the found type
+            var component = Activator.CreateInstance(type) as T;
+
+            if (component is Component comp)
+            {
+                comp.gameObject = this; // Set the gameObject property
+                comp.gameobjectId = GameObjectId;
+                comp.Awake();
+                _components.Add(comp);
+            }
+
+            return component;
+        }
+
+        throw new InvalidOperationException($"No component found that implements {typeof(T).Name}");
+    }
+
 
     //public T GetComponent<T>() where T : Component 
     //{

@@ -20,6 +20,8 @@ namespace AdilGame.Logic.Weapons
     {
         public int Id { get; set; }
         public WeaponTypeEnum WeaponTypeenum { get;  set; }
+        public Texture2D ItemTexture { get; set; }
+        public bool IsDropped { get; set; }
         public string PlayerId { get; set; }
         public string Description { get; set; }
         public bool CanBeDropped { get; set; } = true;
@@ -38,11 +40,11 @@ namespace AdilGame.Logic.Weapons
         public Dictionary<WeaponStatusTypeEnum, int> AdditionalStatuses { get; set; }
         public WeaponState weaponState { get; set; }
         protected GameObject ObjectToHit { get; set; } = new GameObject();
-        public abstract void Fire();
+        public abstract void Fire(Vector2 mousePostion);
         
         public virtual void Hit(GameObject gameObject)
         {
-
+            if(IsDropped) return;
         }
 
         private void AddRandomStatuses()
@@ -67,6 +69,7 @@ namespace AdilGame.Logic.Weapons
 
         public void FlipWeaponBasedOnMouse(bool shouldfaceleft)
         {
+            if (IsDropped) return;
             //var currentMouseState = Mouse.GetState();
             //var mouseInWorld = Game1.Instance.map._camera.ScreenToWorld(currentMouseState.X, currentMouseState.Y);
 
@@ -114,7 +117,9 @@ namespace AdilGame.Logic.Weapons
             Render2D = gameObject.AddComponent<Render2D>();
             Collider = gameObject.AddComponent<ColliderComponent>();
             Collider.TileMapOptomaiztion = false;
+            Collider.ShowCollider = false;
             Collider.ColliderPointAtBottom = false;
+            Collider.IsDynamic = true;
             Collider.OnCollision += Hit;
             base.Awake();
         }
@@ -134,6 +139,10 @@ namespace AdilGame.Logic.Weapons
             };
             Render2D.PlayAnimation(animation);
             base.Update(gameTime);
+            if (IsDropped)
+            {
+                Render2D.Position = gameObject.Transform.Position;
+            }
         }
 
     

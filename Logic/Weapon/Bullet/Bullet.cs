@@ -49,15 +49,12 @@ namespace AdilGame.Logic.Weapons.bullet
             gameObject.Transform.Position = startPosition;
             ColliderComponent.Velocity = direction * speed;
             Render2D.Position = gameObject.Transform.Position;
-            UpdateBulletRotation();
+            UpdateBulletRotation(mousePosition);
             IsActive = true;
         }
 
-        protected void UpdateBulletRotation()
+        protected void UpdateBulletRotation(Vector2 mouseInWorld)
         {
-            // Get the current mouse state and weapon's position
-            var currentMouseState = Mouse.GetState();
-            var mouseInWorld = Game1.Instance.map._camera.ScreenToWorld(currentMouseState.X, currentMouseState.Y);
             Vector2 weaponPosition = new Vector2(Render2D.Position.X, Render2D.Position.Y); // Assuming Render2D has a Position 
             // Calculate the direction vector
             Vector2 direction = mouseInWorld - weaponPosition;

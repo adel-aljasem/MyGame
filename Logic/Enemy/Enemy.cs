@@ -15,6 +15,7 @@ namespace AdilGame.Logic.Enemy
     public abstract class Enemy : Component , IStatus
     {
         public int Id { get; set; }
+        public int RankLevel { get; set; }
         public int Health { get; set; }
         public int Speed { get; set; }
         public int AttackPower { get; set; }

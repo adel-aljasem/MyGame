@@ -22,7 +22,6 @@ public class Core
 
     public void Update(GameTime gameTime)
     {
-        Secound30FpsSetting(gameTime);
 
         GameObjectSystem.UpdateGameObjects(gameTime);
         if (updateTask.IsCompleted)
@@ -32,23 +31,11 @@ public class Core
 
     }
 
-    private void Secound30FpsSetting(GameTime gameTime)
-    {
-        accumulator += (float)gameTime.ElapsedGameTime.TotalSeconds;
-        while (accumulator >= targetPhysicsUpdateTime)
-        {
-            UpdatePhysics(targetPhysicsUpdateTime);
-            accumulator -= targetPhysicsUpdateTime;
-        }
-    }
 
     public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
     {
         RenderSystem.Draw(spriteBatch, GameObjectSystem.GetAllGameObjects(), gameTime);
     }
 
-    private void UpdatePhysics(float deltaTime)
-    {
 
-    }
 }

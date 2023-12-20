@@ -13,4 +13,9 @@ public class GameState
         Enemies = new List<EnemyState>();
         Items = new List<ItemState>();
     }
+
+    public void Update()
+    {
+
+    }
 }

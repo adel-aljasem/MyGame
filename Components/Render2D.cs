@@ -22,10 +22,14 @@ namespace AdilGame.Components
         public float Scale { get; set; } = 1f;
         public float LayerDepth { get; set; } = 1f;
         private SpriteEffects spriteEffect = SpriteEffects.None;
+        private int Width;
+        private int Height;
         public Texture2D LoadTexture(string path,int width , int height)
         {
             Texture = Game1.Instance.Content.Load<Texture2D>(path);
             AnimationManagerComponent.SetFrameSizeAnimation(width, height);
+            Width = width;
+            Height = height;
 
             //Origin = new Vector2(SourceRectangle.Width / 2, SourceRectangle.Height / 2);
 
@@ -49,10 +53,10 @@ namespace AdilGame.Components
             spriteEffect = shouldFaceLeft ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
 
         }
-        public void DrawSprite( int index)
+        public Texture2D DrawSprite( int index)
         {
-            int spriteWidth = 16;
-            int spriteHeight = 16;
+            int spriteWidth = Width;
+            int spriteHeight = Height;
 
             // Calculate the number of columns in the texture
             int columns = Texture.Width / spriteWidth;
@@ -68,11 +72,12 @@ namespace AdilGame.Components
             // Define the source rectangle for the sprite
             SourceRectangle = new Rectangle(x, y, spriteWidth, spriteHeight);
 
-            //// Create a new texture for the sprite (if needed)
-            //Texture2D spriteTexture = new Texture2D(Game1.Instance.GraphicsDevice, spriteWidth, spriteHeight);
-            //Color[] data = new Color[spriteWidth * spriteHeight];
-            //texture.GetData(0, sourceRectangle, data, 0, data.Length);
-            //spriteTexture.SetData(data);
+            // Create a new texture for the sprite (if needed)
+            Texture2D spriteTexture = new Texture2D(Game1.Instance.GraphicsDevice, spriteWidth, spriteHeight);
+            Color[] data = new Color[spriteWidth * spriteHeight];
+            Texture.GetData(0, SourceRectangle, data, 0, data.Length);
+            spriteTexture.SetData(data);
+            return spriteTexture;
 
         }
 
@@ -80,7 +85,6 @@ namespace AdilGame.Components
         internal override void Awake()
         {
             Position = gameObject.Transform.Position;
-            Origin = gameObject.Transform.Position;
             Rotation = gameObject.Transform.Rotation;  
         }
 

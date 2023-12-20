@@ -9,6 +9,8 @@ using AdilGame.System;
 using System.Threading.Tasks;
 using AdilGame.World;
 using System.Numerics;
+using AdilGame.UI;
+using AdilGame.Logic.inventory;
 
 namespace AdilGame;
 
@@ -18,7 +20,7 @@ public class Game1 : Game
     public SpriteBatch spriteBatch;
     public ScreenManager screenManager;
     public static Game1 Instance;
-    PlayerNameInputUI playerNameInputUI1;
+    UIManager UIManager;
     public Map map { get; set; }
     public Game1()
     {
@@ -36,7 +38,6 @@ public class Game1 : Game
     protected override async void Initialize()
     {
         base.Initialize();
-        playerNameInputUI1 = new PlayerNameInputUI();
         map.Initialize();
 
 
@@ -51,12 +52,13 @@ public class Game1 : Game
     {
         spriteBatch = new SpriteBatch(GraphicsDevice);
         screenManager.LoadContent(Content);
+        UIManager = new UIManager();
     }
     private Task updateTask = Task.CompletedTask;
 
     protected override void Update(GameTime gameTime)
     {
-
+        UIManager = new UIManager();
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
         map.Update(gameTime);
@@ -68,7 +70,8 @@ public class Game1 : Game
         }
 
         Core.Instance.Update(gameTime);
-
+        UIManager.Update(gameTime);
+        InventorySystem.Instance.Update(gameTime);
         base.Update(gameTime);
 
     }
@@ -91,7 +94,7 @@ public class Game1 : Game
         spriteBatch.End();
 
         screenManager.Draw(gameTime, spriteBatch);
-
+        UIManager.Draw(gameTime, spriteBatch);
         base.Draw(gameTime);
     }
 

@@ -14,6 +14,7 @@ namespace AdilGame.Logic
 {
     public class TileMapObjectHolderComponent : Component, IStatus
     {
+        public int RankLevel { get; set; } = 3;
         public TiledMapTileObject TiledMapObject { get; set; }
         public Render2D render2D { get; set; }
         public int Health { get; set; }

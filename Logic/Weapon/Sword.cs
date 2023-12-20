@@ -19,7 +19,7 @@ namespace AdilGame.Logic.Weapons
         private float rotationTimer;
         private bool isRotating = false;
 
-        public override void Fire()
+        public override void Fire(Vector2 mousePositionv)
         {
             var currentMouseState = Mouse.GetState();
             var status = ObjectToHit.GetComponentByInterface<IStatus>();
@@ -72,9 +72,10 @@ namespace AdilGame.Logic.Weapons
         internal override void Awake()
         {
             base.Awake();
+            Name = "Sword";
             WeaponTypeenum = WeaponTypeEnum.sword;
             var textrue = Render2D.LoadTexture("Weapon/Full Sheet", 16, 16);
-            Render2D.DrawSprite(2);
+            ItemTexture = Render2D.DrawSprite(2);
             Render2D.Origin = new Vector2(6, 10);
             Collider.ShowCollider = true;
 

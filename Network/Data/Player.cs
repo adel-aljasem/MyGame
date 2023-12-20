@@ -18,7 +18,7 @@ public class Player
     [Key(4)]
     public MouseData MouseData { get; set; } = new MouseData();
     [Key(5)]
-    public WeaponData weaponData { get; set; }
+    public WeaponData weaponData { get; set; } = new WeaponData();
     // Add other player-related properties as needed
 
 }

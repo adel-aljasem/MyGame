@@ -12,11 +12,12 @@ using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Serialization;
 using System;
 
-public class PlayerController : BaseController, IStatus, IMovement
+public class PlayerController : Component, IStatus, IMovement
 {
     //public int Id { get; set; }
     //public string OnlineID { get; set; }
     //public string Name { get; set; }
+    public int RankLevel { get; set; } = 2;
     public CharcaterStatu State { get; set; }
     public int SpeedMultiplier { get; set; }
     public int Health { get; set; } = 100;
@@ -24,6 +25,9 @@ public class PlayerController : BaseController, IStatus, IMovement
     public Render2D render2D { get; set; }
     ColliderComponent Collider { get; set; }
     MouseState currentMouseState;
+    public Player PlayerComingData { get; set; } = new Player();
+    public Player PlayerGoingData { get; set; } = new Player();
+    public InventoryController inventoryController { get; set; }
     public WeaponController weaponController { get; set; }
 
     public bool IsLocalPlayer { get; set; }
@@ -53,7 +57,7 @@ public class PlayerController : BaseController, IStatus, IMovement
         Collider.ShowCollider = false;
         render2D = gameObject.AddComponent<Render2D>();
         weaponController = gameObject.AddComponent<WeaponController>();
-        weaponController.PlayerId = PlayerComingData.Id;
+        inventoryController = gameObject.AddComponent<InventoryController>();
         if (Collider != null)
         {
             Collider.OnCollision += HandleCollision;
@@ -61,7 +65,6 @@ public class PlayerController : BaseController, IStatus, IMovement
         LoadAnimations();
 
         render2D.Origin = new Vector2(gameObject.Transform.Scale.X / 2, gameObject.Transform.Scale.Y / 2);
-
 
     }
     IStatus a;
@@ -117,20 +120,17 @@ public class PlayerController : BaseController, IStatus, IMovement
         };
     }
 
-    private void UpdateControllers()
-    {
-        weaponController.PlayerComingData = PlayerComingData;
-        weaponController.PlayerGoingData = PlayerGoingData;
-    }
+ 
     internal override void NetworkUpdate(GameTime gameTime)
     {
         base.NetworkUpdate(gameTime);
-        //if (IsLocalPlayer)
-        //{
-        //    PlayerGoingData.OnlineID = PlayerComingData.OnlineID;
-        //    PlayerGoingData.Id = PlayerComingData.Id;
-        //    _ = PlayerNetworkManager.Instance.SendUpdatePlayerDataToServer(PlayerGoingData);
-        //}
+        if (IsLocalPlayer)
+        {
+            PlayerGoingData.OnlineID = PlayerComingData.OnlineID;
+            PlayerGoingData.Id = PlayerComingData.Id;
+            _ = PlayerNetworkManager.Instance.SendUpdatePlayerDataToServer(PlayerGoingData);
+
+        }
 
     }
 
