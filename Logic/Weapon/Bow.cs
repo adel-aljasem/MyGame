@@ -1,14 +1,8 @@
 ﻿using AdilGame.Logic.Weapons.bullet;
 using AdilGame.Network.Data;
-using AdilGame.System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PandaGameLibrary.Components;
+using PandaGameLibrary.System;
 
 namespace AdilGame.Logic.Weapons
 {
@@ -35,21 +29,21 @@ namespace AdilGame.Logic.Weapons
             }
 
         }
-        internal override void Awake()
+        public override void Awake()
         {
             base.Awake();
             Name = "Bow";
             WeaponTypeenum = WeaponTypeEnum.bow;
             var textrue = Render2D.LoadTexture("Weapon/Full Sheet", 16, 16);
-            ItemTexture = Render2D.DrawSprite(106);
             Render2D.AddAnimation("Attacking", new Animation(textrue, 105, 107, 0.5f));
             Render2D.AddAnimation("Idle", new Animation(textrue, 106, 106, 100));
             Render2D.Origin = new Vector2(6, 10);
+            Render2D.DrawSprite(106);
         }
 
 
 
-        internal override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             WeaponPositionRight = gameObject.Transform.Position + new Vector2(6, -2);
             WeaponPositionLeft = gameObject.Transform.Position + new Vector2(-5, -2);

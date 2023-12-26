@@ -8,13 +8,15 @@ namespace AdilGame.Logic.Weapons
 {
     public enum WeaponStatusTypeEnum
     {
+        Health,
         MagicDefense,
         PhysicalDefense,
         MagicalPower,
         PhysicalPower,
         Critical,
         MovementSpeed,
-        Haste
+        Haste,
+        Dodge
         // Add other statuses as needed
     }
     public enum WeaponState

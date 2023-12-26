@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdilGame", "AdilGame.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdilGameLauncher", "..\Updater\AdilGameLauncher.csproj", "{D2E750C8-44B5-48E0-848C-F9867534A2AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PandaGameLibrary", "..\PandaGameLibrary\PandaGameLibrary.csproj", "{1B6D6584-FAE4-4156-89BF-52819A275F52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D2E750C8-44B5-48E0-848C-F9867534A2AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2E750C8-44B5-48E0-848C-F9867534A2AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2E750C8-44B5-48E0-848C-F9867534A2AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B6D6584-FAE4-4156-89BF-52819A275F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B6D6584-FAE4-4156-89BF-52819A275F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B6D6584-FAE4-4156-89BF-52819A275F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B6D6584-FAE4-4156-89BF-52819A275F52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

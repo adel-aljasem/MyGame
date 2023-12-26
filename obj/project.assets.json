@@ -642,6 +642,22 @@
         "runtime": {
           "lib/netstandard2.0/XNAssets.MonoGame.dll": {}
         }
+      },
+      "PandaGameLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.SignalR.Client": "8.0.0",
+          "Microsoft.AspNetCore.SignalR.Protocols.MessagePack": "8.0.0",
+          "MonoGame.Content.Builder.Task": "3.8.1.303",
+          "MonoGame.Framework.DesktopGL": "3.8.1.303"
+        },
+        "compile": {
+          "bin/placeholder/PandaGameLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PandaGameLibrary.dll": {}
+        }
       }
     }
   },
@@ -1621,6 +1637,11 @@
         "xnassets.monogame.0.6.7.nupkg.sha512",
         "xnassets.monogame.nuspec"
       ]
+    },
+    "PandaGameLibrary/1.0.0": {
+      "type": "project",
+      "path": "../PandaGameLibrary/PandaGameLibrary.csproj",
+      "msbuildProject": "../PandaGameLibrary/PandaGameLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1631,7 +1652,8 @@
       "MonoGame.Content.Builder.Task >= 3.8.1.303",
       "MonoGame.Framework.DesktopGL >= 3.8.1.303",
       "Myra >= 1.5.0",
-      "Newtonsoft.Json >= 13.0.3"
+      "Newtonsoft.Json >= 13.0.3",
+      "PandaGameLibrary >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1666,7 +1688,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\zoomb\\source\\repos\\adel-aljasem\\PandaGameLibrary\\PandaGameLibrary.csproj": {
+              "projectPath": "C:\\Users\\zoomb\\source\\repos\\adel-aljasem\\PandaGameLibrary\\PandaGameLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

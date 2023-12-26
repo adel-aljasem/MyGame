@@ -1,16 +1,14 @@
-﻿using Microsoft.Xna.Framework;
+﻿using AdilGame.Logic.inventory;
+using AdilGame.Network;
+using AdilGame.UI;
+using AdilGame.World;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
 using Myra;
-using System.Windows;
-using AdilGame.Network;
-using AdilGame.System;
+using PandaGameLibrary.System;
+using System;
 using System.Threading.Tasks;
-using AdilGame.World;
-using System.Numerics;
-using AdilGame.UI;
-using AdilGame.Logic.inventory;
 
 namespace AdilGame;
 
@@ -20,7 +18,7 @@ public class Game1 : Game
     public SpriteBatch spriteBatch;
     public ScreenManager screenManager;
     public static Game1 Instance;
-    UIManager UIManager;
+    public UIManager UIManager;
     public Map map { get; set; }
     public Game1()
     {
@@ -31,7 +29,6 @@ public class Game1 : Game
         screenManager = new ScreenManager(graphics, 1920, 1080);
         Window.AllowUserResizing = true;
         MyraEnvironment.Game = this;
-        map = new Map("map/ge");
 
     }
 
@@ -39,11 +36,7 @@ public class Game1 : Game
     {
         base.Initialize();
         map.Initialize();
-
-
         PlayerNetworkManager.Instance.ConnectServer($"e");
-
-
 
     }
 
@@ -53,12 +46,17 @@ public class Game1 : Game
         spriteBatch = new SpriteBatch(GraphicsDevice);
         screenManager.LoadContent(Content);
         UIManager = new UIManager();
+        Core.Instance.graphicsDevice = graphics.GraphicsDevice;
+        Core.Instance.contentManager = Content;
+        map = new Map("map/ge");
+
+
     }
     private Task updateTask = Task.CompletedTask;
 
     protected override void Update(GameTime gameTime)
     {
-        UIManager = new UIManager();
+
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
         map.Update(gameTime);

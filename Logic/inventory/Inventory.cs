@@ -12,7 +12,7 @@ namespace AdilGame.Logic.inventory
     public class Inventory
     {
 
-        private List<Iitem> items = new List<Iitem>();
+        public List<Iitem> items = new List<Iitem>();
         private List<Iitem> droppableItems = new List<Iitem>(); // Cache for droppable items
 
 

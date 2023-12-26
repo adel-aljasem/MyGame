@@ -1,9 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PandaGameLibrary.Components;
 
 namespace AdilGame.Logic.inventory.Items
 {
@@ -13,7 +9,6 @@ namespace AdilGame.Logic.inventory.Items
         public GameObject gameObject { get; set; }
         public ColliderComponent Collider { get; set; }
         public string PlayerId { get; set; }
-        public Texture2D ItemTexture { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public bool CanBeDropped { get; set; }

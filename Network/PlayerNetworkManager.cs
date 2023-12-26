@@ -1,7 +1,8 @@
 ﻿using AdilGame.Network.Data;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
+using PandaGameLibrary.Components;
+using PandaGameLibrary.System;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -57,7 +58,7 @@ namespace AdilGame.Network
                             player.gameObject.Transform.Position = new Vector2(p.MovementData.PositionX, p.MovementData.PositionY);
                             player.PlayerGoingData.MouseData.Id = p.Id;
                             playerControllers.Add(player);
-                            Core.Instance.GameObjectSystem.AddGameObject(playercon);
+                            PandaGameLibrary.System.Core.Instance.GameObjectSystem.AddGameObject(playercon);
                         }
                     }
                     Console.WriteLine($"Player connected: {PlayersOnServer.Last().Name} {PlayersOnServer.Last().OnlineID}");
@@ -203,6 +204,11 @@ namespace AdilGame.Network
             {
                 Id = playerId,
                 Name = playerName,
+                MovementData = new MovementData
+                {
+                    PositionX = 550,
+                    PositionY = 550,
+                }
                 
             };
             try

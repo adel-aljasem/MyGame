@@ -4,11 +4,9 @@ using AdilGame.Logic.Weapons;
 using AdilGame.Network.Data;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using PandaGameLibrary.Components;
+using PandaGameLibrary.System;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdilGame.Logic.Controllers
 {
@@ -21,35 +19,40 @@ namespace AdilGame.Logic.Controllers
         WeaponController WeaponController { get; set; }
 
 
-        public void PickItem()
+        public void PickItem(GameObject gameObject)
         {
-
+            var item = gameObject.GetComponentByInterface<Iitem>();
+            if (item != null && Keyboard.GetState().IsKeyDown(Keys.Space))
+            {
+                Inventory.AddItem(item);
+                var go = Core.Instance.GameObjectSystem.GetGameObjectById(item.gameObject.GameObjectId);
+                Core.Instance.GameObjectSystem.RemoveGameObject(go);
+            }
         }
 
         public void DropItem(Iitem iitem)
         {
             Random random = new Random();
-            var random1= random.Next(-15, 15);
-            var random2= random.Next(-15, 15);
+            var random1 = random.Next(-15, 15);
+            var random2 = random.Next(-15, 15);
             Inventory.RemoveItem(iitem);
-            GameObject ItemGameObejct = new GameObject();
-            var item = ItemGameObejct.AddComponentByInterface<Iitem>();
-            item.IsDropped = true;
-            ItemGameObejct.Transform.Position = gameObject.Transform.Position + new Vector2(random1,random2);
-            Core.Instance.GameObjectSystem.AddGameObject(ItemGameObejct);
-            
+            iitem.IsDropped = true;
+            iitem.gameObject.Transform.Position = gameObject.Transform.Position + new Vector2(random1, random2);
+            Core.Instance.GameObjectSystem.AddGameObject(iitem.gameObject);
+
 
         }
 
-        internal override void Awake()
+        public override void Awake()
         {
             WeaponController = gameObject.GetComponent<WeaponController>();
 
             Inventory.AddItem(WeaponController.EquipedWeapon);
 
         }
+        private KeyboardState _previousKeyboardState;
 
-        internal override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             KeyboardState keyboardState = Keyboard.GetState();
             if (keyboardState.IsKeyDown(Keys.E))
@@ -60,6 +63,15 @@ namespace AdilGame.Logic.Controllers
                 Inventory.AddItem(eq);
                 DropItem(eq);
             }
+            KeyboardState currentKeyboardState = Keyboard.GetState();
+            if (currentKeyboardState.IsKeyDown(Keys.B) && !_previousKeyboardState.IsKeyDown(Keys.B))
+            {
+                Game1.Instance.UIManager.CreateInventoryWindow(Inventory.items);
+                Game1.Instance.UIManager._inventoryWindow.Visible = true;
+
+            }
+
+            _previousKeyboardState = currentKeyboardState; // Update the previous state
         }
     }
 }

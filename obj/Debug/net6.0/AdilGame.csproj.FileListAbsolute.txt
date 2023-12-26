@@ -1337,8 +1337,10 @@ C:\Users\zoomb\source\repos\adel-aljasem\MyGame\GameFiles\net6.0\MonoGame.Extend
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\GameFiles\net6.0\MonoGame.Extended.Graphics.pdb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\GameFiles\net6.0\MonoGame.Extended.Graphics.xml
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\GameFiles\net6.0\MonoGame.Extended.Tiled.pdb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\Buildings\Cyan\CyanTaverns_0.xnb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\Character\girl.xnb
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\Character\Untitled-1.xnb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\Fonts\File.xnb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\Ground\Cliff-Water_0.xnb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\Ground\DeadGrass_0.xnb
@@ -1366,8 +1368,6 @@ C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Content\Weapon\
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.exe
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.deps.json
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.runtimeconfig.json
-C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.dll
-C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.pdb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AssetManagementBase.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\Cyotek.Drawing.BitmapFont.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\DdsKtxXna.dll
@@ -1417,6 +1417,8 @@ C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\runtimes\browse
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\MonoGame.Extended.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\MonoGame.Extended.Graphics.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\MonoGame.Extended.Tiled.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\PandaGameLibrary.dll
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\PandaGameLibrary.pdb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\MonoGame.Extended.pdb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\MonoGame.Extended.xml
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\MonoGame.Extended.Graphics.pdb
@@ -1432,4 +1434,5 @@ C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net6.0\AdilGame.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net6.0\refint\AdilGame.dll
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net6.0\AdilGame.pdb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net6.0\AdilGame.genruntimeconfig.cache
+C:\Users\zoomb\source\repos\adel-aljasem\MyGame\bin\Debug\net6.0\AdilGame.pdb
 C:\Users\zoomb\source\repos\adel-aljasem\MyGame\obj\Debug\net6.0\ref\AdilGame.dll

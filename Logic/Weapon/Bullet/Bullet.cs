@@ -1,14 +1,7 @@
-﻿using AdilGame.Components;
-using AdilGame.Interfaces;
-using AdilGame.System;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework;
+using PandaGameLibrary.Components;
+using PandaGameLibrary.System;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdilGame.Logic.Weapons.bullet
 {
@@ -29,7 +22,7 @@ namespace AdilGame.Logic.Weapons.bullet
 
 
 
-        internal override void Awake()
+        public override void Awake()
         {
             ColliderComponent = gameObject.AddComponent<ColliderComponent>();
             ColliderComponent.ShowCollider = false;
@@ -71,7 +64,7 @@ namespace AdilGame.Logic.Weapons.bullet
         }
 
 
-        internal override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
 
             if (!IsActive) return;

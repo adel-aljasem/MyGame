@@ -1,16 +1,11 @@
-﻿using AdilGame.Components;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
+using PandaGameLibrary.System;
 
 namespace AdilGame.Logic.Enemy
 {
     public class Ghost : Enemy
     {
-        internal override void Awake()
+        public override void Awake()
         {
             base.Awake();
             var Arthax = Render2d.LoadTexture("Character/girl", 32, 32);
@@ -19,7 +14,7 @@ namespace AdilGame.Logic.Enemy
             Render2d.AddAnimation("Walk", new Animation(Arthax, 24, 31, 0.2f));
         }
 
-        internal override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
         }

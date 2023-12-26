@@ -1,13 +1,11 @@
 ﻿using AdilGame.Logic;
-using AdilGame.System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended.Tiled;
-using System;
+using PandaGameLibrary.Components;
+using PandaGameLibrary.System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdilGame.World
 {

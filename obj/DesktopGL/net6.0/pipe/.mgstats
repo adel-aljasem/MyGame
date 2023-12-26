@@ -1,5 +1,6 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "C:/Users/zoomb/source/repos/adel-aljasem/MyGame/Content/Character/girl.png","C:/Users/zoomb/source/repos/adel-aljasem/MyGame/bin/DesktopGL/pipe/Content/Character/girl.xnb","TextureProcessor","Texture2DContent",11036,294997,0.1430167
+"C:/Users/zoomb/source/repos/adel-aljasem/MyGame/Content/Character/Untitled-1.png","C:/Users/zoomb/source/repos/adel-aljasem/MyGame/bin/DesktopGL/pipe/Content/Character/Untitled-1.xnb","TextureProcessor","Texture2DContent",335,1037,0.155533
 "C:/Users/zoomb/source/repos/adel-aljasem/MyGame/Content/Fonts/File.spritefont","C:/Users/zoomb/source/repos/adel-aljasem/MyGame/bin/DesktopGL/pipe/Content/Fonts/File.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.1116184
 "C:/Users/zoomb/source/repos/adel-aljasem/MyGame/Content/map/ge.tmx","C:/Users/zoomb/source/repos/adel-aljasem/MyGame/bin/DesktopGL/pipe/Content/map/ge.xnb","TiledMapProcessor","TiledMapContentItem",51084,85185,0.2431574
 "C:/Users/zoomb/source/repos/adel-aljasem/MyGame/Content/map/ob.png","C:/Users/zoomb/source/repos/adel-aljasem/MyGame/bin/DesktopGL/pipe/Content/map/ob.xnb","TextureProcessor","Texture2DContent",10352,4752485,0.1107353

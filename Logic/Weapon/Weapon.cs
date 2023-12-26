@@ -1,34 +1,26 @@
-﻿using AdilGame.Components;
+﻿using AdilGame.Logic.inventory.Items;
+using AdilGame.Logic.Status;
+using AdilGame.Network.Data;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using PandaGameLibrary.Components;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AdilGame.Logic.Weapons.bullet;
-using Cyotek.Drawing.BitmapFont;
-using AdilGame.System;
-using AdilGame.Network.Data;
-using AdilGame.Logic.inventory.Items;
-using System.Threading;
 
 namespace AdilGame.Logic.Weapons
 {
-    public abstract class Weapon : Component , Iitem ,IWeaponData
+    public abstract class Weapon : Component , Iitem 
     {
         public int Id { get; set; }
         public WeaponTypeEnum WeaponTypeenum { get;  set; }
-        public Texture2D ItemTexture { get; set; }
         public bool IsDropped { get; set; }
         public string PlayerId { get; set; }
         public string Description { get; set; }
         public bool CanBeDropped { get; set; } = true;
-        public int Level { get; set; }
-        public int PlusHealth { get; set; }
+        public int Tier { get; set; }
         public string Name { get; set; }
-        public int Damage { get; set; } = 10;
+        public int Damage { get; set; } = 5;
         public int BulletSpeed { get; set; } = 5;
         public int LifeTime { get; set; } = 100;
         public Render2D Render2D { get; set; }
@@ -38,6 +30,8 @@ namespace AdilGame.Logic.Weapons
         protected abstract Vector2 WeaponPositionRight { get; set; }
         protected abstract Vector2 WeaponPositionLeft { get; set; }
         public Dictionary<WeaponStatusTypeEnum, int> AdditionalStatuses { get; set; }
+        public Dictionary<WeaponStatusTypeEnum, int> MainStatus { get; set; }
+
         public WeaponState weaponState { get; set; }
         protected GameObject ObjectToHit { get; set; } = new GameObject();
         public abstract void Fire(Vector2 mousePostion);
@@ -108,7 +102,7 @@ namespace AdilGame.Logic.Weapons
             Render2D.Rotation = angle;
         }
 
-        internal override void Awake()
+        public override void Awake()
         {
             Guid guid = Guid.NewGuid();
             Id = guid.GetHashCode();
@@ -125,7 +119,7 @@ namespace AdilGame.Logic.Weapons
         }
 
 
-        internal override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             if (fireCooldownTimer > 0)
             {

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using AdilGame.Components;
-using AdilGame.Logic.inventory;
+﻿using AdilGame.Logic.inventory;
 using AdilGame.Logic.Weapons;
 using AdilGame.Network;
 using AdilGame.Network.Data;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using PandaGameLibrary.Components;
+using System.Threading.Tasks;
 
 namespace AdilGame.Logic.Controllers
 {
@@ -23,7 +18,7 @@ namespace AdilGame.Logic.Controllers
         public Player PlayerComingData { get; set; } = new Player();
         public Player PlayerGoingData { get; set; } = new Player();
 
-        internal override void Awake()
+        public override void Awake()
         {
             base.Awake();
             EquipedWeapon = gameObject.AddComponent<Bow>();
@@ -47,7 +42,7 @@ namespace AdilGame.Logic.Controllers
                 }
                 EquipedWeapon.Damage = weapon.Damage;
                 EquipedWeapon.BulletSpeed = weapon.BulletSpeed;
-                EquipedWeapon.Level = weapon.Level;
+                EquipedWeapon.Tier = weapon.Level;
                 EquipedWeapon.FireCooldownDuration = weapon.FireCooldownDuration;
             }
         }
@@ -111,7 +106,7 @@ namespace AdilGame.Logic.Controllers
             gameObject.GetComponent<Weapon>()?.FlipWeaponBasedOnMouse(shouldFaceLeft);
             gameObject.GetComponent<Weapon>()?.UpdateWeaponRotation(MouseX, mouseY);
         }
-        internal override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             PlayerGoingData = gameObject.GetComponent<PlayerController>()?.PlayerGoingData;
             PlayerComingData = gameObject.GetComponent<PlayerController>()?.PlayerComingData;
@@ -121,7 +116,7 @@ namespace AdilGame.Logic.Controllers
             if (PlayerComingData.weaponData.Fire == true)
             {
                 EquipedWeapon.LifeTime = PlayerComingData.weaponData.LifeTime;
-                EquipedWeapon.Level = PlayerComingData.weaponData.Level;
+                EquipedWeapon.Tier = PlayerComingData.weaponData.Level;
                 EquipedWeapon.FireCooldownDuration  = PlayerComingData.weaponData.FireCooldownDuration ;
                 EquipedWeapon.BulletSpeed = PlayerComingData.weaponData.BulletSpeed;
                 EquipedWeapon.Fire(new Vector2(PlayerComingData.MouseData.MouseX, PlayerComingData.MouseData.MouseY));

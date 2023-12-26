@@ -1,25 +1,20 @@
-﻿using AdilGame.Components;
-using AdilGame.Interfaces;
-using AdilGame.System;
+﻿using AdilGame.Interfaces;
+using AdilGame.Logic.Status;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended.Tiled;
+using PandaGameLibrary.Components;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdilGame.Logic
 {
-    public class TileMapObjectHolderComponent : Component, IStatus
+    public class TileMapObjectHolderComponent : Component, IDamageable
     {
         public int RankLevel { get; set; } = 3;
         public TiledMapTileObject TiledMapObject { get; set; }
         public Render2D render2D { get; set; }
-        public int Health { get; set; }
-        public CharcaterStatu State { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public CharcaterStatu State { get; set ; }
         public int Speed { get; set; }
+        public IMainStatus MainStatus { get ; set ; }
 
         Rectangle rectangle;
 
@@ -31,8 +26,9 @@ namespace AdilGame.Logic
 
 
 
-        internal override void Awake()
+        public override void Awake()
         {
+            StatusSystem.instance.ApplyStatusBasedOnRank(this);
             render2D = gameObject.AddComponent<Render2D>();
 
         }
@@ -52,7 +48,7 @@ namespace AdilGame.Logic
 
         }
 
-        internal override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
 
@@ -78,7 +74,7 @@ namespace AdilGame.Logic
 
         public void DmgTaken(int dmg)
         {
-            Health -= dmg; // Reduce health
+            MainStatus.Health -= dmg; // Reduce health
                            // Start rotation effect
             if (!isRotating)
             {

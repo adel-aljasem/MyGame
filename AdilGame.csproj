@@ -49,4 +49,7 @@
   <ItemGroup>
     <None Remove="C:\Users\zoomb\.nuget\packages\zstdnet\1.4.5\build\x64\libzstd.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PandaGameLibrary\PandaGameLibrary.csproj" />
+  </ItemGroup>
 </Project>

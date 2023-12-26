@@ -1,27 +1,23 @@
 using AdilGame;
-using AdilGame.Components;
 using AdilGame.Interfaces;
 using AdilGame.Logic.Controllers;
-using AdilGame.Logic.inventory;
-using AdilGame.Logic.Weapons;
+using AdilGame.Logic.inventory.Items;
+using AdilGame.Logic.Status;
 using AdilGame.Network;
 using AdilGame.Network.Data;
-using Cyotek.Drawing.BitmapFont;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using MonoGame.Extended.Serialization;
+using PandaGameLibrary.Components;
+using PandaGameLibrary.System;
 using System;
 
-public class PlayerController : Component, IStatus, IMovement
+public class PlayerController : Component, IDamageable
 {
     //public int Id { get; set; }
     //public string OnlineID { get; set; }
     //public string Name { get; set; }
     public int RankLevel { get; set; } = 2;
     public CharcaterStatu State { get; set; }
-    public int SpeedMultiplier { get; set; }
-    public int Health { get; set; } = 100;
-    public int Speed { get; set; } = 100;
     public Render2D render2D { get; set; }
     ColliderComponent Collider { get; set; }
     MouseState currentMouseState;
@@ -31,8 +27,11 @@ public class PlayerController : Component, IStatus, IMovement
     public WeaponController weaponController { get; set; }
 
     public bool IsLocalPlayer { get; set; }
+    public IMainStatus MainStatus { get; set; } 
+
     public PlayerController()
     {
+        
     }
 
     private void LoadAnimations()
@@ -48,8 +47,9 @@ public class PlayerController : Component, IStatus, IMovement
     }
 
 
-    internal override void Awake()
+    public override void Awake()
     {
+        StatusSystem.instance.ApplyStatusBasedOnRank(this);
         gameObject.Tag = "player";
         Collider = gameObject.AddComponent<ColliderComponent>();
         Collider.IsDynamic = true;
@@ -67,7 +67,7 @@ public class PlayerController : Component, IStatus, IMovement
         render2D.Origin = new Vector2(gameObject.Transform.Scale.X / 2, gameObject.Transform.Scale.Y / 2);
 
     }
-    IStatus a;
+    IDamageable a;
 
     public void FlipCharacterBasedOnMousePosition(float MouseX, float mouseY, float characterX)
     {
@@ -89,7 +89,7 @@ public class PlayerController : Component, IStatus, IMovement
         }
     }
 
-    internal override void Update(GameTime gameTime)
+    public override void Update(GameTime gameTime)
     {
         if (PlayerComingData.Id == PlayerNetworkManager.Instance.playerId)
         {
@@ -120,8 +120,8 @@ public class PlayerController : Component, IStatus, IMovement
         };
     }
 
- 
-    internal override void NetworkUpdate(GameTime gameTime)
+
+    public override void NetworkUpdate(GameTime gameTime)
     {
         base.NetworkUpdate(gameTime);
         if (IsLocalPlayer)
@@ -138,17 +138,17 @@ public class PlayerController : Component, IStatus, IMovement
 
     private void HandleCollision(GameObject gameObject)
     {
-
-        a = gameObject.GetComponentByInterface<IStatus>();
-        Console.WriteLine("SMALL COLLISION");
-
-
+        if (gameObject != null)
+        {
+            a = gameObject.GetComponentByInterface<IDamageable>();
+            inventoryController.PickItem(gameObject);
+        }
     }
 
 
     public void UpdateOtherPlayersPosition()
     {
-      
+
         Vector2 playercomingdata = new Vector2(PlayerComingData.MovementData.PositionX, PlayerComingData.MovementData.PositionY);
         gameObject.Transform.Position = Vector2.Lerp(gameObject.Transform.Position, playercomingdata, 0.01f);
 
@@ -156,11 +156,11 @@ public class PlayerController : Component, IStatus, IMovement
         //gameObject.Transform.Position = new Vector2(PlayerComingData.PositionX,PlayerComingData.po);
         if ((CharcaterStatu)PlayerComingData.MovementData.State == CharcaterStatu.Walk)
         {
-            PlayerComingData.MovementData.State =(byte)CharcaterStatu.Walk;
+            PlayerComingData.MovementData.State = (byte)CharcaterStatu.Walk;
         }
         else
         {
-            PlayerComingData.MovementData.State =(byte)CharcaterStatu.Idle;
+            PlayerComingData.MovementData.State = (byte)CharcaterStatu.Idle;
         }
 
     }
@@ -200,7 +200,7 @@ public class PlayerController : Component, IStatus, IMovement
             {
                 direction.Normalize();
                 //Collider.Velocity = direction * Speed;
-                direction = direction * Speed;
+                direction = direction * MainStatus.MovementSpeed;
                 PlayerGoingData.MovementData.VelocityX = (short)direction.X;
                 PlayerGoingData.MovementData.VelocityY = (short)direction.Y;
                 PlayerGoingData.MovementData.State = (byte)CharcaterStatu.Walk;
@@ -215,10 +215,6 @@ public class PlayerController : Component, IStatus, IMovement
             }
 
         }
-
-
-        //PlayerNetworkManager.Instance.SendPlayerPositionToServer(new Player { Id = Id, MouseX = MouseX, MouseY = MouseY, X = direction.X, Y = direction.Y });
-
     }
 
     public void Slow(int slowamount)
@@ -228,12 +224,12 @@ public class PlayerController : Component, IStatus, IMovement
 
     public void DmgTaken(int dmg)
     {
-        Health -= dmg;
+        MainStatus.Health -= dmg;
     }
 
     public void HealthIncress(int healthAmount)
     {
-        Health += healthAmount;
+        MainStatus.Health += healthAmount;
     }
 
 

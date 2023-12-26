@@ -1,9 +1,9 @@
-using System;
 using AdilGame;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using MonoGame.Extended.Screens;
+using PandaGameLibrary.System;
+using System;
 
 public class ScreenManager
 {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdilGame.Interfaces
 {
-    public interface INetowrk : IMovement , IStatus
+    public interface INetowrk : IMovement , IDamageable
     {
         public event Action<List<object>> OnConnectEvent;
         public event Action<object> OnUpdateEvent;

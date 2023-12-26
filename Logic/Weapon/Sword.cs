@@ -1,13 +1,8 @@
 ﻿using AdilGame.Interfaces;
 using AdilGame.Network.Data;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using MonoGame.Extended.Timers;
+using PandaGameLibrary.Components;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdilGame.Logic.Weapons
 {
@@ -21,16 +16,18 @@ namespace AdilGame.Logic.Weapons
 
         public override void Fire(Vector2 mousePositionv)
         {
-            var currentMouseState = Mouse.GetState();
-            var status = ObjectToHit.GetComponentByInterface<IStatus>();
-            StartRotation();
-
-            if (status != null && fireCooldownTimer <= 0)
+            if(ObjectToHit != null)
             {
-                status.DmgTaken(6);
-                fireCooldownTimer = FireCooldownDuration;
-                Console.WriteLine("damged");
-                ObjectToHit = new GameObject();
+                var status = ObjectToHit.GetComponentByInterface<IDamageable>();
+                StartRotation();
+
+                if (status != null && fireCooldownTimer <= 0)
+                {
+                    status.DmgTaken(6);
+                    fireCooldownTimer = FireCooldownDuration;
+                    Console.WriteLine("damged");
+
+                }
 
             }
         }
@@ -69,19 +66,19 @@ namespace AdilGame.Logic.Weapons
         }
 
 
-        internal override void Awake()
+        public override void Awake()
         {
             base.Awake();
             Name = "Sword";
             WeaponTypeenum = WeaponTypeEnum.sword;
             var textrue = Render2D.LoadTexture("Weapon/Full Sheet", 16, 16);
-            ItemTexture = Render2D.DrawSprite(2);
+             Render2D.DrawSprite(2);
             Render2D.Origin = new Vector2(6, 10);
             Collider.ShowCollider = true;
 
         }
 
-        internal override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
 

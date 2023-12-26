@@ -1,24 +1,15 @@
-﻿using AdilGame.Components;
-using AdilGame.Interfaces;
-using AdilGame.System;
+﻿using AdilGame.Interfaces;
+using AdilGame.Logic.Status;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
+using PandaGameLibrary.Components;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdilGame.Logic.Enemy
 {
-    public abstract class Enemy : Component , IStatus
+    public abstract class Enemy : Component , IDamageable
     {
         public int Id { get; set; }
         public int RankLevel { get; set; }
-        public int Health { get; set; }
-        public int Speed { get; set; }
-        public int AttackPower { get; set; }
         public float DetectionRange { get; set; }
         public ColliderComponent colliderRange { get; set; }
         public ColliderComponent colliderEnemy { get; set; }
@@ -27,7 +18,8 @@ namespace AdilGame.Logic.Enemy
 
         public EnemyState State { get; set; }
         public AIComponent AI { get; set; }
-        CharcaterStatu IStatus.State { get ; set ; }
+        CharcaterStatu IDamageable.State { get ; set ; }
+        public IMainStatus MainStatus { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void OnEnterRange(GameObject gameObject)
         {
@@ -39,7 +31,7 @@ namespace AdilGame.Logic.Enemy
         
         }
 
-        internal override void Awake()
+        public override void Awake()
         {
             Render2d = gameObject.AddComponent<Render2D>();
             colliderRange.OnCollision += OnEnterRange;
@@ -67,7 +59,7 @@ namespace AdilGame.Logic.Enemy
         {
         }
 
-        internal override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             previousPosition = gameObject.Transform.Position;
             FlipCharacterBasedOnMovingPosition();

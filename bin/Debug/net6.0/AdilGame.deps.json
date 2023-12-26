@@ -15,6 +15,7 @@
           "MonoGame.Framework.DesktopGL": "3.8.1.303",
           "Myra": "1.5.0",
           "Newtonsoft.Json": "13.0.3",
+          "PandaGameLibrary": "1.0.0",
           "MonoGame.Extended": "1.0.0.0",
           "MonoGame.Extended.Graphics": "1.0.0.0",
           "MonoGame.Extended.Tiled": "1.0.0.0"
@@ -468,6 +469,17 @@
           }
         }
       },
+      "PandaGameLibrary/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.SignalR.Client": "8.0.0",
+          "Microsoft.AspNetCore.SignalR.Protocols.MessagePack": "8.0.0",
+          "MonoGame.Content.Builder.Task": "3.8.1.303",
+          "MonoGame.Framework.DesktopGL": "3.8.1.303"
+        },
+        "runtime": {
+          "PandaGameLibrary.dll": {}
+        }
+      },
       "MonoGame.Extended/1.0.0.0": {
         "runtime": {
           "MonoGame.Extended.dll": {
@@ -779,6 +791,11 @@
       "sha512": "sha512-bRO+Obkw5w1OL4UkarTokvtlCAwSZGyfz0FjJtwhbnvspz4dhLQZcBMlSnORm4dsvyM2zKdqa8hVdptQ1qf/CQ==",
       "path": "xnassets.monogame/0.6.7",
       "hashPath": "xnassets.monogame.0.6.7.nupkg.sha512"
+    },
+    "PandaGameLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "MonoGame.Extended/1.0.0.0": {
       "type": "reference",
